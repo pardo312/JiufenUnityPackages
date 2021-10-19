@@ -29,40 +29,30 @@ namespace Jiufen.Audio
             Coroutine jobRunner = StartCoroutine(RunAudioJob(_audioJob));
             m_jobsTable.Add(_audioJob.type, jobRunner);
             AudioLogger.Log($"Starting Job {_audioJob.type} with action: {_audioJob.action}");
-            AudioLogger.Log($"Job count: {m_jobsTable.Count}");
         }
 
         private IEnumerator RunAudioJob(AudioJob _audioJob)
         {
-            if (_audioJob.options.delay != null) yield return _audioJob.options.delay;
+            if (_audioJob.delay != null) yield return _audioJob.delay;
 
             AudioTrack track = (AudioTrack)AudioController.Instance.m_audioTable[_audioJob.type];
             track._audioSource.clip = GetAudioClipFromAudioTrack(_audioJob.type, track);
 
             float initialVolume = 0f;
             float targetVolume = 1f;
-            float durationFade = 1.0f;
-
             switch (_audioJob.action)
             {
                 case AudioAction.START:
                     track._audioSource.Play();
-                    if (_audioJob.options.fadeIn.fade)
-                    {
-                        initialVolume = 0;
-                        durationFade = _audioJob.options.fadeIn.fadeDuration;
-                        targetVolume = 1f;
-                    }
                     break;
                 case AudioAction.STOP:
-                    if (!_audioJob.options.fadeOut.fade)
+                    if (!_audioJob.fade)
                     {
                         track._audioSource.Stop();
                     }
                     else
                     {
-                        initialVolume = track._audioSource.volume;
-                        durationFade = _audioJob.options.fadeOut.fadeDuration;
+                        initialVolume = 1f;
                         targetVolume = 0f;
                     }
                     break;
@@ -72,8 +62,9 @@ namespace Jiufen.Audio
                     break;
             }
             // fade volume
-            if ((_audioJob.options.fadeOut.fade && _audioJob.action == AudioAction.STOP) || (_audioJob.options.fadeIn.fade && _audioJob.action == AudioAction.START))
+            if (_audioJob.fade)
             {
+                float durationFade =4.0f;
                 float timerFade = 0.0f;
 
                 while (timerFade <= durationFade)
@@ -83,6 +74,8 @@ namespace Jiufen.Audio
                     yield return null;
                 }
 
+                // if _timer was 0.9999 and Time.deltaTime was 0.01 we would not have reached the target
+                // make sure the volume is set to the value we want
                 track._audioSource.volume = targetVolume;
 
                 if (_audioJob.action == AudioAction.STOP)
@@ -90,11 +83,8 @@ namespace Jiufen.Audio
                     track._audioSource.Stop();
                 }
             }
-
-            //To Ensuser that the job was added first
-            yield return new WaitForFixedUpdate();
-
             m_jobsTable.Remove(_audioJob.type);
+            AudioLogger.Log($"Job count: {m_jobsTable.Count}");
         }
         private AudioClip GetAudioClipFromAudioTrack(AudioType type, AudioTrack track)
         {
@@ -150,7 +140,7 @@ namespace Jiufen.Audio
         {
             foreach (DictionaryEntry entry in m_jobsTable)
             {
-                Coroutine job = (Coroutine)entry.Value;
+                IEnumerator job = (IEnumerator)entry.Value;
                 StopCoroutine(job);
             }
         }

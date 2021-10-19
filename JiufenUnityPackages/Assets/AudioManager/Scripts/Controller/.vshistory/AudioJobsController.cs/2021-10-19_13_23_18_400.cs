@@ -29,7 +29,6 @@ namespace Jiufen.Audio
             Coroutine jobRunner = StartCoroutine(RunAudioJob(_audioJob));
             m_jobsTable.Add(_audioJob.type, jobRunner);
             AudioLogger.Log($"Starting Job {_audioJob.type} with action: {_audioJob.action}");
-            AudioLogger.Log($"Job count: {m_jobsTable.Count}");
         }
 
         private IEnumerator RunAudioJob(AudioJob _audioJob)
@@ -50,19 +49,19 @@ namespace Jiufen.Audio
                     if (_audioJob.options.fadeIn.fade)
                     {
                         initialVolume = 0;
-                        durationFade = _audioJob.options.fadeIn.fadeDuration;
+                        durationFade = _audioJob.fadeIn.fadeDuration;
                         targetVolume = 1f;
                     }
                     break;
                 case AudioAction.STOP:
-                    if (!_audioJob.options.fadeOut.fade)
+                    if (!_audioJob.fadeOut.fade)
                     {
                         track._audioSource.Stop();
                     }
                     else
                     {
                         initialVolume = track._audioSource.volume;
-                        durationFade = _audioJob.options.fadeOut.fadeDuration;
+                        durationFade = _audioJob.fadeOut.fadeDuration;
                         targetVolume = 0f;
                     }
                     break;
@@ -72,7 +71,7 @@ namespace Jiufen.Audio
                     break;
             }
             // fade volume
-            if ((_audioJob.options.fadeOut.fade && _audioJob.action == AudioAction.STOP) || (_audioJob.options.fadeIn.fade && _audioJob.action == AudioAction.START))
+            if (_audioJob.fadeOut.fade || _audioJob.fadeIn.fade)
             {
                 float timerFade = 0.0f;
 
@@ -90,11 +89,8 @@ namespace Jiufen.Audio
                     track._audioSource.Stop();
                 }
             }
-
-            //To Ensuser that the job was added first
-            yield return new WaitForFixedUpdate();
-
             m_jobsTable.Remove(_audioJob.type);
+            AudioLogger.Log($"Job count: {m_jobsTable.Count}");
         }
         private AudioClip GetAudioClipFromAudioTrack(AudioType type, AudioTrack track)
         {

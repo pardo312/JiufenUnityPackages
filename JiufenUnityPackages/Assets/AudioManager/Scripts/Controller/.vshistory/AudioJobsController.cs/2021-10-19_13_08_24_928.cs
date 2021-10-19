@@ -29,12 +29,11 @@ namespace Jiufen.Audio
             Coroutine jobRunner = StartCoroutine(RunAudioJob(_audioJob));
             m_jobsTable.Add(_audioJob.type, jobRunner);
             AudioLogger.Log($"Starting Job {_audioJob.type} with action: {_audioJob.action}");
-            AudioLogger.Log($"Job count: {m_jobsTable.Count}");
         }
 
         private IEnumerator RunAudioJob(AudioJob _audioJob)
         {
-            if (_audioJob.options.delay != null) yield return _audioJob.options.delay;
+            if (_audioJob.delay != null) yield return _audioJob.delay;
 
             AudioTrack track = (AudioTrack)AudioController.Instance.m_audioTable[_audioJob.type];
             track._audioSource.clip = GetAudioClipFromAudioTrack(_audioJob.type, track);
@@ -47,22 +46,29 @@ namespace Jiufen.Audio
             {
                 case AudioAction.START:
                     track._audioSource.Play();
-                    if (_audioJob.options.fadeIn.fade)
+                    if (_audioJob.fades == null)
+                        break;
+                    if (_audioJob.fades.fadeIn.shouldFade)
                     {
                         initialVolume = 0;
-                        durationFade = _audioJob.options.fadeIn.fadeDuration;
+                        durationFade = _audioJob.fades.fadeIn.fadeDuration;
                         targetVolume = 1f;
                     }
                     break;
                 case AudioAction.STOP:
-                    if (!_audioJob.options.fadeOut.fade)
+                    if (_audioJob.fades == null)
+                    {
+                        track._audioSource.Stop();
+                        break;
+                    }
+                    if (!_audioJob.fades.fadeOut.shouldFade)
                     {
                         track._audioSource.Stop();
                     }
                     else
                     {
                         initialVolume = track._audioSource.volume;
-                        durationFade = _audioJob.options.fadeOut.fadeDuration;
+                        durationFade = _audioJob.fades.fadeOut.fadeDuration;
                         targetVolume = 0f;
                     }
                     break;
@@ -72,29 +78,30 @@ namespace Jiufen.Audio
                     break;
             }
             // fade volume
-            if ((_audioJob.options.fadeOut.fade && _audioJob.action == AudioAction.STOP) || (_audioJob.options.fadeIn.fade && _audioJob.action == AudioAction.START))
+            if (_audioJob.fades == null)
             {
-                float timerFade = 0.0f;
-
-                while (timerFade <= durationFade)
+                if (_audioJob.fades.fadeOut.shouldFade || _audioJob.fades.fadeIn.shouldFade)
                 {
-                    track._audioSource.volume = Mathf.Lerp(initialVolume, targetVolume, timerFade / durationFade);
-                    timerFade += Time.deltaTime;
-                    yield return null;
+                    float timerFade = 0.0f;
+
+                    while (timerFade <= durationFade)
+                    {
+                        track._audioSource.volume = Mathf.Lerp(initialVolume, targetVolume, timerFade / durationFade);
+                        timerFade += Time.deltaTime;
+                        yield return null;
+                    }
+
+                    track._audioSource.volume = targetVolume;
+
+                    if (_audioJob.action == AudioAction.STOP)
+                    {
+                        track._audioSource.Stop();
+                    }
                 }
 
-                track._audioSource.volume = targetVolume;
-
-                if (_audioJob.action == AudioAction.STOP)
-                {
-                    track._audioSource.Stop();
-                }
             }
-
-            //To Ensuser that the job was added first
-            yield return new WaitForFixedUpdate();
-
             m_jobsTable.Remove(_audioJob.type);
+            AudioLogger.Log($"Job count: {m_jobsTable.Count}");
         }
         private AudioClip GetAudioClipFromAudioTrack(AudioType type, AudioTrack track)
         {

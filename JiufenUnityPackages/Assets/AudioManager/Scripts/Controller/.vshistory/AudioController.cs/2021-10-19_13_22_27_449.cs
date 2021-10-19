@@ -39,13 +39,13 @@ namespace Jiufen.Audio
         {
             m_audioJobsController.AddJob(new AudioJob(audioType, AudioAction.START, options));
         }
-        public void StopAudio(AudioType audioType, AudioJobOptions options = null)
+        public void StopAudio(AudioType audioType, AudioJobOptions audioJobExtras = null)
         {
-            m_audioJobsController.AddJob(new AudioJob(audioType, AudioAction.STOP, options));
+            m_audioJobsController.AddJob(new AudioJob(audioType, AudioAction.STOP, audioJobExtras));
         }
-        public void RestartAudio(AudioType audioType, AudioJobOptions options = null)
+        public void RestartAudio(AudioType audioType, AudioJobOptions audioJobExtras = null)
         {
-            m_audioJobsController.AddJob(new AudioJob(audioType, AudioAction.RESTART, options));
+            m_audioJobsController.AddJob(new AudioJob(audioType, AudioAction.RESTART, audioJobExtras));
         }
         #endregion 2.2.Audio Behaviours
 

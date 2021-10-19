@@ -11,8 +11,7 @@ namespace Jiufen.Audio.Test
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                AudioJobOptions audioJobExtras= new AudioJobOptions(new AudioFadeInfo(true,1));
-                AudioController.Instance.PlayAudio(AudioType.OST_Main_Theme,audioJobExtras);
+                AudioController.Instance.PlayAudio(AudioType.OST_Main_Theme,default,new AudioFadeInfo(true,1.0f));
                 Debug.Log("Pressed q");
             }
             if (Input.GetKeyDown(KeyCode.E))
@@ -29,8 +28,7 @@ namespace Jiufen.Audio.Test
             //STOPS
             if (Input.GetKeyDown(KeyCode.A))
             {
-                AudioJobOptions audioJobExtras= new AudioJobOptions(null,new AudioFadeInfo(true,1));
-                AudioController.Instance.StopAudio(AudioType.OST_Main_Theme,audioJobExtras);
+                AudioController.Instance.StopAudio(AudioType.OST_Main_Theme,default,new AudioFadeInfo(true,1.0f));
                 Debug.Log("Pressed a");
             }
             if (Input.GetKeyDown(KeyCode.D))

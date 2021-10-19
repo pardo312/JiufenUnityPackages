@@ -26,8 +26,7 @@ namespace Jiufen.Audio
             RemoveConflictingJobs(_audioJob.type);
 
             //Add Job
-            Coroutine jobRunner = StartCoroutine(RunAudioJob(_audioJob));
-            m_jobsTable.Add(_audioJob.type, jobRunner);
+            m_jobsTable.Add(_audioJob.type, StartCoroutine(RunAudioJob(_audioJob)));
             AudioLogger.Log($"Starting Job {_audioJob.type} with action: {_audioJob.action}");
             AudioLogger.Log($"Job count: {m_jobsTable.Count}");
         }
@@ -90,10 +89,6 @@ namespace Jiufen.Audio
                     track._audioSource.Stop();
                 }
             }
-
-            //To Ensuser that the job was added first
-            yield return new WaitForFixedUpdate();
-
             m_jobsTable.Remove(_audioJob.type);
         }
         private AudioClip GetAudioClipFromAudioTrack(AudioType type, AudioTrack track)

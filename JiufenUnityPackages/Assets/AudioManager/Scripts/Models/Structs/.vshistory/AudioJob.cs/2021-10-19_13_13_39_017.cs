@@ -7,25 +7,24 @@ namespace Jiufen.Audio
     {
         public AudioType type;
         public AudioAction action;
-        public AudioJobOptions options;
 
-        public AudioJob(AudioType audioType, AudioAction audioAction, AudioJobOptions audioJobExtras = null)
+        public AudioJob(AudioType audioType, AudioAction audioAction, AudioFadeInfo fadeIn, AudioFadeInfo fadeOut, float delay)
         {
             this.type = audioType;
             this.action = audioAction;
-            this.options = audioJobExtras != null ? audioJobExtras : new AudioJobOptions();
         }
     }
-    public class AudioJobOptions
+    public class AudioJobInfo
     {
         public AudioFadeInfo fadeIn;
         public AudioFadeInfo fadeOut;
         public WaitForSeconds delay;
 
-        public AudioJobOptions(AudioFadeInfo fadeIn = null, AudioFadeInfo fadeOut = null, float delay = 0f)
+        public AudioJobInfo()
         {
-            this.fadeIn = fadeIn != null ? fadeIn : new AudioFadeInfo(false, 0);
-            this.fadeOut = fadeOut != null ? fadeOut : new AudioFadeInfo(false, 0);
+
+            this.fadeIn = fadeIn;
+            this.fadeOut = fadeOut;
             this.delay = delay > 0f ? new WaitForSeconds(delay) : null;
         }
     }

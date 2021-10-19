@@ -35,17 +35,17 @@ namespace Jiufen.Audio
         #endregion 2.1.UnityEvents
 
         #region 2.2.Audio Behaviours
-        public void PlayAudio(AudioType audioType, AudioJobOptions options = null)
+        public void PlayAudio(AudioType audioType, FadeInfo fadeIn = null,FadeInfo fadeIn = null, float delay = 0.0f)
         {
-            m_audioJobsController.AddJob(new AudioJob(audioType, AudioAction.START, options));
+            m_audioJobsController.AddJob(new AudioJob(AudioAction.START, audioType, , delay));
         }
-        public void StopAudio(AudioType audioType, AudioJobOptions options = null)
+        public void StopAudio(AudioType audioType, bool fade = false, float delay = 0.0f)
         {
-            m_audioJobsController.AddJob(new AudioJob(audioType, AudioAction.STOP, options));
+            m_audioJobsController.AddJob(new AudioJob(AudioAction.STOP, audioType, fade, delay));
         }
-        public void RestartAudio(AudioType audioType, AudioJobOptions options = null)
+        public void RestartAudio(AudioType audioType, bool fade = false, float delay = 0.0f)
         {
-            m_audioJobsController.AddJob(new AudioJob(audioType, AudioAction.RESTART, options));
+            m_audioJobsController.AddJob(new AudioJob(AudioAction.RESTART, audioType, fade, delay));
         }
         #endregion 2.2.Audio Behaviours
 

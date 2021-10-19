@@ -72,7 +72,7 @@ namespace Jiufen.Audio
                     break;
             }
             // fade volume
-            if ((_audioJob.options.fadeOut.fade && _audioJob.action == AudioAction.STOP) || (_audioJob.options.fadeIn.fade && _audioJob.action == AudioAction.START))
+            if ((_audioJob.options.fadeOut.fade && _audioJob.action == AudioAction.STOP )|| (_audioJob.options.fadeIn.fade&& _audioJob.action == AudioAction.START))
             {
                 float timerFade = 0.0f;
 
@@ -90,10 +90,6 @@ namespace Jiufen.Audio
                     track._audioSource.Stop();
                 }
             }
-
-            //To Ensuser that the job was added first
-            yield return new WaitForFixedUpdate();
-
             m_jobsTable.Remove(_audioJob.type);
         }
         private AudioClip GetAudioClipFromAudioTrack(AudioType type, AudioTrack track)

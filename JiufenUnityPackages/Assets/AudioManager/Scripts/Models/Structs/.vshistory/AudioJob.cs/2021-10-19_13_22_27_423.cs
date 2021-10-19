@@ -7,13 +7,13 @@ namespace Jiufen.Audio
     {
         public AudioType type;
         public AudioAction action;
-        public AudioJobOptions options;
+        public AudioJobOptions audioJobExtras;
 
         public AudioJob(AudioType audioType, AudioAction audioAction, AudioJobOptions audioJobExtras = null)
         {
             this.type = audioType;
             this.action = audioAction;
-            this.options = audioJobExtras != null ? audioJobExtras : new AudioJobOptions();
+            this.audioJobExtras = audioJobExtras != null ? audioJobExtras : new AudioJobOptions();
         }
     }
     public class AudioJobOptions

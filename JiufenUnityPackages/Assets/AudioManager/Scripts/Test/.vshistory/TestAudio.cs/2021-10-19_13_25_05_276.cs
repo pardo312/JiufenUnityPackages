@@ -11,7 +11,7 @@ namespace Jiufen.Audio.Test
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                AudioJobOptions audioJobExtras= new AudioJobOptions(new AudioFadeInfo(true,1));
+                AudioJobOptions audioJobExtras= new AudioJobOptions(null,new AudioFadeInfo(true,1));
                 AudioController.Instance.PlayAudio(AudioType.OST_Main_Theme,audioJobExtras);
                 Debug.Log("Pressed q");
             }

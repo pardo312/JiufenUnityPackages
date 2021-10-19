@@ -10,11 +10,11 @@ namespace Jiufen.Audio
 
         #region 1.Fields
         public Hashtable m_audioTable;
-        [SerializeField] private AudioTrack[] m_audioTracks;
-        [SerializeField] private bool debug;
+        [SerializeField]private AudioTrack[] m_audioTracks;
+        [SerializeField]private bool debug;
 
         public static AudioController Instance;
-        private AudioJobsController m_audioJobsController;
+        [SerializeField]private AudioJobsController m_audioJobsController;
         #endregion 1.Fields
 
         #region 2.Methods
@@ -35,17 +35,17 @@ namespace Jiufen.Audio
         #endregion 2.1.UnityEvents
 
         #region 2.2.Audio Behaviours
-        public void PlayAudio(AudioType audioType, AudioJobOptions options = null)
+        public void PlayAudio(AudioType audioType, bool fade = false, float delay = 0.0f)
         {
-            m_audioJobsController.AddJob(new AudioJob(audioType, AudioAction.START, options));
+            m_audioJobsController.AddJob(new AudioJob(AudioAction.START, audioType, fade, delay));
         }
-        public void StopAudio(AudioType audioType, AudioJobOptions options = null)
+        public void StopAudio(AudioType audioType, bool fade = false, float delay = 0.0f)
         {
-            m_audioJobsController.AddJob(new AudioJob(audioType, AudioAction.STOP, options));
+            m_audioJobsController.AddJob(new AudioJob(AudioAction.STOP, audioType,fade,delay));
         }
-        public void RestartAudio(AudioType audioType, AudioJobOptions options = null)
+        public void RestartAudio(AudioType audioType, bool fade = false, float delay = 0.0f)
         {
-            m_audioJobsController.AddJob(new AudioJob(audioType, AudioAction.RESTART, options));
+            m_audioJobsController.AddJob(new AudioJob(AudioAction.RESTART, audioType,fade,delay));
         }
         #endregion 2.2.Audio Behaviours
 
@@ -56,10 +56,8 @@ namespace Jiufen.Audio
             AudioLogger.m_debug = debug;
 
             m_audioTable = new Hashtable();
-            GenerateAudioTable();
-
-            m_audioJobsController = gameObject.AddComponent<AudioJobsController>();
             m_audioJobsController.Init();
+            GenerateAudioTable();
         }
 
         private void GenerateAudioTable()

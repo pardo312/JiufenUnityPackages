@@ -90,10 +90,7 @@ namespace Jiufen.Audio
                     track._audioSource.Stop();
                 }
             }
-
-            //To Ensuser that the job was added first
             yield return new WaitForFixedUpdate();
-
             m_jobsTable.Remove(_audioJob.type);
         }
         private AudioClip GetAudioClipFromAudioTrack(AudioType type, AudioTrack track)
