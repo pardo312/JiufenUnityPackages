@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Jiufen.Audio
 {
-    public class AudioController : MonoBehaviour
+    public class AudioManager : MonoBehaviour
     {
 
         #region 1.Fields
@@ -13,7 +13,7 @@ namespace Jiufen.Audio
         [SerializeField] private AudioTrack[] m_audioTracks;
         [SerializeField] private bool debug;
 
-        public static AudioController Instance;
+        public static AudioManager Instance;
         private AudioJobsController m_audioJobsController;
         #endregion 1.Fields
 
