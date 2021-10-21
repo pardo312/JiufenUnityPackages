@@ -9,7 +9,7 @@ namespace Jiufen.Audio.Editor
     public class AudioTableWindow : EditorWindow
     {
         #region Singleton And Events
-        public const string AUDIO_TRACK_PATH = "Assets/Resources/Scriptables/SFXAudioTrack.asset";
+        public const string AUDIO_TRACK_PATH = "Assets/Resources/Scriptables/AudioManager/SFXAudioTrack.asset";
         private const int AUDIOTABLE_KEY_COLUM_WIDTH = 120;
         private int _currentPiece = 0;
         private int _previousPiece = 0;
@@ -30,10 +30,7 @@ namespace Jiufen.Audio.Editor
                         Debug.Log("Create");
                         CreateScriptable(AUDIO_TRACK_PATH);
                     }
-                    else
-                    {
-                        m_audioTableScriptable = (AudioTrack)EditorGUIUtility.Load(AUDIO_TRACK_PATH);
-                    }
+                    m_audioTableScriptable = (AudioTrack)EditorGUIUtility.Load(AUDIO_TRACK_PATH);
                 }
                 else
                 {
@@ -51,6 +48,10 @@ namespace Jiufen.Audio.Editor
             if (!AssetDatabase.IsValidFolder("Assets/Resources/Scriptables"))
             {
                 AssetDatabase.CreateFolder("Assets/Resources", "Scriptables");
+            }
+            if (!AssetDatabase.IsValidFolder("Assets/Resources/Scriptables/AudioManager"))
+            {
+                AssetDatabase.CreateFolder("Assets/Resources/Scriptables", "AudioManager");
             }
         }
 
@@ -118,7 +119,7 @@ namespace Jiufen.Audio.Editor
             GUILayout.EndHorizontal();
             for (int i = 0; i < m_audioTableScriptable.audioObjects.Count; i++)
             {
-                if(m_audioTableScriptable.audioObjects== null)
+                if (m_audioTableScriptable.audioObjects == null)
                 {
                     m_audioTableScriptable.audioObjects.RemoveAt(i);
                     continue;

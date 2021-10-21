@@ -10,7 +10,7 @@ namespace Jiufen.Audio
 
         #region 1.Fields
         public Hashtable m_audioTable;
-        [SerializeField] private AudioTrack[] m_audioTracks;
+        private List<AudioTrack> m_audioTracks = new List<AudioTrack>();
         [SerializeField] private bool debug;
 
         public static AudioManager Instance;
@@ -35,7 +35,7 @@ namespace Jiufen.Audio
         #endregion 2.1.UnityEvents
 
         #region 2.2.Audio Behaviours
-        public void PlayAudio(string  key, AudioJobOptions options = null)
+        public void PlayAudio(string key, AudioJobOptions options = null)
         {
             m_audioJobsController.AddJob(new AudioJobStart(key, options));
         }
@@ -52,12 +52,24 @@ namespace Jiufen.Audio
         #region 2.3.Helpers
         private void Configure()
         {
+            //Singleton
             Instance = this;
+
+            //Set Logger
             AudioLogger.m_debug = debug;
 
+            //Populate AudioTracks
+            UnityEngine.Object[] audioTrackObjs = Resources.LoadAll("/",typeof(AudioTrack));
+            foreach (UnityEngine.Object obj in audioTrackObjs)
+            {
+                m_audioTracks.Add((AudioTrack)obj);
+            }
+
+            //Create and populate AudioTable
             m_audioTable = new Hashtable();
             GenerateAudioTable();
 
+            //Create jobsController 
             m_audioJobsController = gameObject.AddComponent<AudioJobsController>();
             m_audioJobsController.Init();
         }
