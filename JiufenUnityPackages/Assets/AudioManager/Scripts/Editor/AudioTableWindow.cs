@@ -106,8 +106,6 @@ namespace Jiufen.Audio.Editor
         private void SetAudioTrack()
         {
             EditorGUILayout.LabelField("", GUI.skin.horizontalSlider, GUILayout.ExpandWidth(true), GUILayout.Height(5));
-            m_audioTableScriptable.audioSource = (AudioSource)EditorGUILayout.ObjectField(m_audioTableScriptable.audioSource, typeof(AudioSource));
-
 
             //AUDIO TABLE
             GUILayout.BeginVertical(GUILayout.ExpandWidth(true));

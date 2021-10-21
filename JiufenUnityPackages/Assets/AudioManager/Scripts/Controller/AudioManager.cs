@@ -5,76 +5,74 @@ using UnityEngine;
 
 namespace Jiufen.Audio
 {
-    public class AudioManager : MonoBehaviour
+    public static class AudioManager
     {
 
         #region 1.Fields
-        public Hashtable m_audioTable;
-        private List<AudioTrack> m_audioTracks = new List<AudioTrack>();
-        [SerializeField] private bool debug;
+        public static Hashtable m_audioTable;
+        private static List<AudioTrack> m_audioTracks = new List<AudioTrack>();
+        [SerializeField] private static bool debug;
 
-        public static AudioManager Instance;
-        private AudioJobsController m_audioJobsController;
+        private static AudioJobsController m_audioJobsController;
         #endregion 1.Fields
 
         #region 2.Methods
         #region 2.1.UnityEvents
-        public void Awake()
+        [RuntimeInitializeOnLoadMethod]
+        public static void Init()
         {
-            if (Instance != null) return;
-            else
-            {
-                Configure();
-            }
-        }
-        public void OnDisable()
-        {
-            Dispose();
+            Configure();
         }
 
         #endregion 2.1.UnityEvents
 
         #region 2.2.Audio Behaviours
-        public void PlayAudio(string key, AudioJobOptions options = null)
+        public static void PlayAudio(string key, AudioJobOptions options = null)
         {
             m_audioJobsController.AddJob(new AudioJobStart(key, options));
         }
-        public void StopAudio(string key, AudioJobOptions options = null)
+        public static void StopAudio(string key, AudioJobOptions options = null)
         {
             m_audioJobsController.AddJob(new AudioJobStop(key, options));
         }
-        public void RestartAudio(string key, AudioJobOptions options = null)
+        public static void RestartAudio(string key, AudioJobOptions options = null)
         {
             m_audioJobsController.AddJob(new AudioJobRestart(key, options));
         }
         #endregion 2.2.Audio Behaviours
 
         #region 2.3.Helpers
-        private void Configure()
+        private static void Configure()
         {
-            //Singleton
-            Instance = this;
+            //Create jobsController 
+            GameObject audioJobsGO = new GameObject();
+            audioJobsGO.name = "AudioJobsController";
+            m_audioJobsController = audioJobsGO.AddComponent<AudioJobsController>();
+            m_audioJobsController.Init();
 
             //Set Logger
             AudioLogger.m_debug = debug;
 
             //Populate AudioTracks
-            UnityEngine.Object[] audioTrackObjs = Resources.LoadAll("/",typeof(AudioTrack));
+            UnityEngine.Object[] audioTrackObjs = Resources.LoadAll("/", typeof(AudioTrack));
             foreach (UnityEngine.Object obj in audioTrackObjs)
             {
-                m_audioTracks.Add((AudioTrack)obj);
+                AudioTrack track = (AudioTrack)obj;
+                GameObject audioSourceGO = new GameObject();
+                audioSourceGO.name = "AudioSource";
+                audioSourceGO.transform.parent = audioJobsGO.transform;
+
+                track.audioSource = audioSourceGO.AddComponent<AudioSource>();
+                m_audioTracks.Add(track);
             }
 
             //Create and populate AudioTable
             m_audioTable = new Hashtable();
             GenerateAudioTable();
 
-            //Create jobsController 
-            m_audioJobsController = gameObject.AddComponent<AudioJobsController>();
-            m_audioJobsController.Init();
         }
 
-        private void GenerateAudioTable()
+        private static void GenerateAudioTable()
         {
             foreach (AudioTrack tracks in m_audioTracks)
             {
@@ -94,10 +92,6 @@ namespace Jiufen.Audio
 
         }
 
-        private void Dispose()
-        {
-            m_audioJobsController.Dispose();
-        }
         #endregion 2.3.Helpers
         #endregion 2.Methods
     }

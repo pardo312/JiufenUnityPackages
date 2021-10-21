@@ -34,7 +34,7 @@ namespace Jiufen.Audio
 
         private IEnumerator RunAudioJob(AudioJob _audioJob)
         {
-            AudioTrack track = (AudioTrack)AudioManager.Instance.m_audioTable[_audioJob.key];
+            AudioTrack track = (AudioTrack)AudioManager.m_audioTable[_audioJob.key];
             AudioClip clip = GetAudioClipFromAudioTrack(_audioJob.key, track);
 
             yield return _audioJob.RunAudioJob(track, clip);
@@ -69,8 +69,8 @@ namespace Jiufen.Audio
 
             foreach (DictionaryEntry job in m_jobsTable)
             {
-                AudioTrack currentTrack = (AudioTrack)AudioManager.Instance.m_audioTable[job.Key];
-                AudioTrack newTrack = (AudioTrack)AudioManager.Instance.m_audioTable[key];
+                AudioTrack currentTrack = (AudioTrack)AudioManager.m_audioTable[job.Key];
+                AudioTrack newTrack = (AudioTrack)AudioManager.m_audioTable[key];
                 if (currentTrack.audioSource == newTrack.audioSource)
                 {
                     AudioLogger.LogError($"You have the same audio source for different audioTypes. Please check audioType [{job.Key}] and [{key}] ");
