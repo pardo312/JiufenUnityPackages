@@ -153,16 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_audioTracks:
-  - _audioSource: {fileID: 1376029182}
-    _audioObject:
-    - _audioType: 1
-      _audioClip: {fileID: 8300000, guid: b27d4f5c9a3363c448a488f2c92bd934, type: 3}
-  - _audioSource: {fileID: 1375277605}
-    _audioObject:
-    - _audioType: 2
-      _audioClip: {fileID: 8300000, guid: 431bac3bba9c66f4c8106b0ad0c181ff, type: 3}
-    - _audioType: 3
-      _audioClip: {fileID: 8300000, guid: d815def6ba90560419c11f713b5e59a7, type: 3}
+  - {fileID: 11400000, guid: ae14edc2dfa68754c8e4d392af153281, type: 2}
+  - {fileID: 11400000, guid: 31011d6ae6329664fb83c48676e5dba3, type: 2}
   debug: 0
 --- !u!4 &10824579
 Transform:

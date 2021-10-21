@@ -6,20 +6,20 @@ namespace Jiufen.Audio
 {
     public abstract class AudioJob
     {
-        public AudioType type;
+        public string key;
         public AudioAction action;
         public AudioJobOptions options;
 
-        public AudioJob(AudioType audioType, AudioJobOptions audioJobExtras = null)
+        public AudioJob(string key, AudioJobOptions audioJobExtras = null)
         {
-            this.type = audioType;
+            this.key = key;
             this.options = audioJobExtras != null ? audioJobExtras : new AudioJobOptions();
         }
 
         public virtual IEnumerator RunAudioJob(AudioTrack track, AudioClip clip)
         {
             if (options.delay != null) yield return options.delay;
-            track._audioSource.clip = clip;
+            track.audioSource.clip = clip;
         }
 
         private protected virtual IEnumerator FadeAudio(AudioTrack track, float durationFade, float initialVolume, float targetVolume, Action onFinishFadeCallback = null)
@@ -28,12 +28,12 @@ namespace Jiufen.Audio
 
             while (timerFade <= durationFade)
             {
-                track._audioSource.volume = Mathf.Lerp(initialVolume, targetVolume, timerFade / durationFade);
+                track.audioSource.volume = Mathf.Lerp(initialVolume, targetVolume, timerFade / durationFade);
                 timerFade += Time.deltaTime;
                 yield return null;
             }
 
-            track._audioSource.volume = targetVolume;
+            track.audioSource.volume = targetVolume;
             onFinishFadeCallback?.Invoke();
         }
     }

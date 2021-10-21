@@ -6,7 +6,7 @@ namespace Jiufen.Audio
 {
     public class AudioJobStop : AudioJob
     {
-        public AudioJobStop(AudioType audioType, AudioJobOptions audioJobExtras = null) : base(audioType, audioJobExtras)
+        public AudioJobStop(string key, AudioJobOptions audioJobExtras = null) : base(key, audioJobExtras)
         {
             action = AudioAction.STOP;
         }
@@ -17,11 +17,11 @@ namespace Jiufen.Audio
 
             if (!options.fadeOut.fade)
             {
-                track._audioSource.Stop();
+                track.audioSource.Stop();
             }
             else
             {
-                yield return FadeAudio(track, options.fadeOut.fadeDuration, track._audioSource.volume, 0);
+                yield return FadeAudio(track, options.fadeOut.fadeDuration, track.audioSource.volume, 0);
             }
         }
 
@@ -29,7 +29,7 @@ namespace Jiufen.Audio
         {
             yield return base.FadeAudio(track, durationFade, initialVolume, targetVolume, () =>
             {
-                track._audioSource.Stop();
+                track.audioSource.Stop();
             });
         }
     }

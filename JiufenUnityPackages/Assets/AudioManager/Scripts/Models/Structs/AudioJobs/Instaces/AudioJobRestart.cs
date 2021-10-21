@@ -5,7 +5,7 @@ namespace Jiufen.Audio
 {
     public class AudioJobRestart : AudioJob
     {
-        public AudioJobRestart(AudioType audioType, AudioJobOptions audioJobExtras = null) : base(audioType, audioJobExtras)
+        public AudioJobRestart(string key, AudioJobOptions audioJobExtras = null) : base(key, audioJobExtras)
         {
             action = AudioAction.RESTART;
         }
@@ -14,8 +14,8 @@ namespace Jiufen.Audio
         {
             yield return base.RunAudioJob(track, clip);
 
-            track._audioSource.Stop();
-            track._audioSource.Play();
+            track.audioSource.Stop();
+            track.audioSource.Play();
         }
     }
 

@@ -6,7 +6,7 @@ namespace Jiufen.Audio
 
     public class AudioJobStart : AudioJob
     {
-        public AudioJobStart(AudioType audioType, AudioJobOptions audioJobExtras = null) : base(audioType, audioJobExtras)
+        public AudioJobStart(string key, AudioJobOptions audioJobExtras = null) : base(key, audioJobExtras)
         {
             action = AudioAction.START;
         }
@@ -15,8 +15,8 @@ namespace Jiufen.Audio
         {
             yield return base.RunAudioJob(track, clip);
 
-            track._audioSource.volume = 0;
-            track._audioSource.Play();
+            track.audioSource.volume = 0;
+            track.audioSource.Play();
             yield return FadeAudio(track, options.fadeIn.fadeDuration, 0, 1);
         }
     }

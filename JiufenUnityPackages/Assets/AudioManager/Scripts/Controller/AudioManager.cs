@@ -35,17 +35,17 @@ namespace Jiufen.Audio
         #endregion 2.1.UnityEvents
 
         #region 2.2.Audio Behaviours
-        public void PlayAudio(AudioType audioType, AudioJobOptions options = null)
+        public void PlayAudio(string  key, AudioJobOptions options = null)
         {
-            m_audioJobsController.AddJob(new AudioJobStart(audioType, options));
+            m_audioJobsController.AddJob(new AudioJobStart(key, options));
         }
-        public void StopAudio(AudioType audioType, AudioJobOptions options = null)
+        public void StopAudio(string key, AudioJobOptions options = null)
         {
-            m_audioJobsController.AddJob(new AudioJobStop(audioType, options));
+            m_audioJobsController.AddJob(new AudioJobStop(key, options));
         }
-        public void RestartAudio(AudioType audioType, AudioJobOptions options = null)
+        public void RestartAudio(string key, AudioJobOptions options = null)
         {
-            m_audioJobsController.AddJob(new AudioJobRestart(audioType, options));
+            m_audioJobsController.AddJob(new AudioJobRestart(key, options));
         }
         #endregion 2.2.Audio Behaviours
 
@@ -66,16 +66,16 @@ namespace Jiufen.Audio
         {
             foreach (AudioTrack tracks in m_audioTracks)
             {
-                foreach (AudioObject audioObj in tracks._audioObject)
+                foreach (AudioObject audioObj in tracks.audioObjects)
                 {
-                    if (m_audioTable.Contains(audioObj._audioType))
+                    if (m_audioTable.Contains(audioObj.key))
                     {
-                        AudioLogger.LogError($"AudioTable is registering an already registered audio type: {audioObj._audioType}");
+                        AudioLogger.LogError($"AudioTable is registering an already registered audio type: {audioObj.key}");
                     }
                     else
                     {
-                        m_audioTable.Add(audioObj._audioType, tracks);
-                        AudioLogger.Log($"Audio type {audioObj._audioType} has been registered in the audioTable");
+                        m_audioTable.Add(audioObj.key, tracks);
+                        AudioLogger.Log($"Audio type {audioObj.key} has been registered in the audioTable");
                     }
                 }
             }
@@ -90,3 +90,4 @@ namespace Jiufen.Audio
         #endregion 2.Methods
     }
 }
+

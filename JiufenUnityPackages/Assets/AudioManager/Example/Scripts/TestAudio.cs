@@ -12,17 +12,17 @@ namespace Jiufen.Audio.Test
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 AudioJobOptions audioJobExtras = new AudioJobOptions(new AudioFadeInfo(true, 1));
-                AudioManager.Instance.PlayAudio(AudioType.OST_Main_Theme, audioJobExtras);
+                AudioManager.Instance.PlayAudio("OST_MAIN_THEME", audioJobExtras);
                 Debug.Log("Pressed q");
             }
             if (Input.GetKeyDown(KeyCode.E))
             {
-                AudioManager.Instance.PlayAudio(AudioType.SFX_1);
+                AudioManager.Instance.PlayAudio("SFX_1");
                 Debug.Log("Pressed e");
             }
             if (Input.GetKeyDown(KeyCode.R))
             {
-                AudioManager.Instance.PlayAudio(AudioType.SFX_2);
+                AudioManager.Instance.PlayAudio("SFX_2");
                 Debug.Log("Pressed r");
             }
 
@@ -30,17 +30,17 @@ namespace Jiufen.Audio.Test
             if (Input.GetKeyDown(KeyCode.A))
             {
                 AudioJobOptions audioJobExtras = new AudioJobOptions(null, new AudioFadeInfo(true, 1));
-                AudioManager.Instance.StopAudio(AudioType.OST_Main_Theme, audioJobExtras);
+                AudioManager.Instance.StopAudio("OST_MAIN_THEME", audioJobExtras);
                 Debug.Log("Pressed a");
             }
             if (Input.GetKeyDown(KeyCode.D))
             {
-                AudioManager.Instance.StopAudio(AudioType.SFX_1);
+                AudioManager.Instance.StopAudio("SFX_1");
                 Debug.Log("Pressed d");
             }
             if (Input.GetKeyDown(KeyCode.F))
             {
-                AudioManager.Instance.StopAudio(AudioType.SFX_2);
+                AudioManager.Instance.StopAudio("SFX_2");
                 Debug.Log("Pressed f");
             }
         }

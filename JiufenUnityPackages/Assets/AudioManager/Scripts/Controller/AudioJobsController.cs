@@ -23,34 +23,34 @@ namespace Jiufen.Audio
         #region 2.1.Add & Execute Jobs
         public void AddJob(AudioJob _audioJob)
         {
-            RemoveConflictingJobs(_audioJob.type);
+            RemoveConflictingJobs(_audioJob.key);
 
             //Add Job
             Coroutine jobRunner = StartCoroutine(RunAudioJob(_audioJob));
-            m_jobsTable.Add(_audioJob.type, jobRunner);
-            AudioLogger.Log($"Starting Job {_audioJob.type} with action: {_audioJob.action}");
+            m_jobsTable.Add(_audioJob.key, jobRunner);
+            AudioLogger.Log($"Starting Job {_audioJob.key} with action: {_audioJob.action}");
             AudioLogger.Log($"Job count: {m_jobsTable.Count}");
         }
 
         private IEnumerator RunAudioJob(AudioJob _audioJob)
         {
-            AudioTrack track = (AudioTrack)AudioManager.Instance.m_audioTable[_audioJob.type];
-            AudioClip clip = GetAudioClipFromAudioTrack(_audioJob.type, track);
+            AudioTrack track = (AudioTrack)AudioManager.Instance.m_audioTable[_audioJob.key];
+            AudioClip clip = GetAudioClipFromAudioTrack(_audioJob.key, track);
 
-            yield return _audioJob.RunAudioJob(track,clip);
+            yield return _audioJob.RunAudioJob(track, clip);
 
             //To Ensuser that the job was added first
             yield return new WaitForFixedUpdate();
-            m_jobsTable.Remove(_audioJob.type);
+            m_jobsTable.Remove(_audioJob.key);
         }
 
-        private AudioClip GetAudioClipFromAudioTrack(AudioType type, AudioTrack track)
+        private AudioClip GetAudioClipFromAudioTrack(string key, AudioTrack track)
         {
-            foreach (AudioObject obj in track._audioObject)
+            foreach (AudioObject obj in track.audioObjects)
             {
-                if (obj._audioType == type)
+                if (obj.key == key)
                 {
-                    return obj._audioClip;
+                    return obj.audioClip;
                 }
             }
             return null;
@@ -58,41 +58,41 @@ namespace Jiufen.Audio
         #endregion 2.1.Add & Execute Jobs
 
         #region 2.2.Remove and Dispose Jobs
-        private void RemoveConflictingJobs(AudioType _type)
+        private void RemoveConflictingJobs(string key)
         {
-            if (m_jobsTable.Contains(_type))
+            if (m_jobsTable.Contains(key))
             {
-                RemoveJob(_type);
+                RemoveJob(key);
             }
 
-            AudioType audioTypeConflict = AudioType.None;
+            string keyConflict = "";
 
             foreach (DictionaryEntry job in m_jobsTable)
             {
                 AudioTrack currentTrack = (AudioTrack)AudioManager.Instance.m_audioTable[job.Key];
-                AudioTrack newTrack = (AudioTrack)AudioManager.Instance.m_audioTable[_type];
-                if (currentTrack._audioSource == newTrack._audioSource)
+                AudioTrack newTrack = (AudioTrack)AudioManager.Instance.m_audioTable[key];
+                if (currentTrack.audioSource == newTrack.audioSource)
                 {
-                    AudioLogger.LogError($"You have the same audio source for different audioTypes. Please check audioType [{job.Key}] and [{_type}] ");
-                    audioTypeConflict = _type;
+                    AudioLogger.LogError($"You have the same audio source for different audioTypes. Please check audioType [{job.Key}] and [{key}] ");
+                    keyConflict = key;
                 }
             }
-            if (audioTypeConflict != AudioType.None)
+            if (!String.IsNullOrEmpty(keyConflict))
             {
-                RemoveJob(audioTypeConflict);
+                RemoveJob(keyConflict);
             }
         }
 
-        private void RemoveJob(AudioType _type)
+        private void RemoveJob(string key)
         {
-            if (!m_jobsTable.ContainsKey(_type))
+            if (!m_jobsTable.ContainsKey(key))
             {
-                AudioLogger.LogError($"You are trying to stop a job that doesn't exist in the jobsTable: {_type}");
+                AudioLogger.LogError($"You are trying to stop a job that doesn't exist in the jobsTable: {key}");
                 return;
             }
-            Coroutine runningJob = (Coroutine)m_jobsTable[_type];
+            Coroutine runningJob = (Coroutine)m_jobsTable[key];
             StopCoroutine(runningJob);
-            m_jobsTable.Remove(_type);
+            m_jobsTable.Remove(key);
         }
         public void Dispose()
         {
