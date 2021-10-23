@@ -36,6 +36,8 @@ namespace Jiufen.Audio
         {
             AudioTrack track = (AudioTrack)AudioManager.m_audioTable[_audioJob.key];
             AudioClip clip = GetAudioClipFromAudioTrack(_audioJob.key, track);
+            track.audioSource.loop = _audioJob.options.loop;
+            track.audioSource.volume = _audioJob.options.volume;
 
             yield return _audioJob.RunAudioJob(track, clip);
 
