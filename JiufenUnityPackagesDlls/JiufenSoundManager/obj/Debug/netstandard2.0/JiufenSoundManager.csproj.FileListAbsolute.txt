@@ -1,0 +1,17 @@
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\JiufenSoundManager\bin\Debug\netstandard2.0\JiufenSoundManager.deps.json
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\JiufenSoundManager\bin\Debug\netstandard2.0\JiufenSoundManager.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\JiufenSoundManager\bin\Debug\netstandard2.0\JiufenSoundManager.pdb
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\JiufenSoundManager\bin\Debug\netstandard2.0\Newtonsoft.Json.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\JiufenSoundManager\bin\Debug\netstandard2.0\UnityEngine.CoreModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\JiufenSoundManager\bin\Debug\netstandard2.0\UnityEngine.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\JiufenSoundManager\bin\Debug\netstandard2.0\UnityEngine.IMGUIModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\JiufenSoundManager\bin\Debug\netstandard2.0\UnityEngine.JSONSerializeModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\JiufenSoundManager\bin\Debug\netstandard2.0\UnityEngine.TextRenderingModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\JiufenSoundManager\obj\Debug\netstandard2.0\JiufenSoundManager.csproj.AssemblyReference.cache
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\JiufenSoundManager\obj\Debug\netstandard2.0\JiufenSoundManager.AssemblyInfoInputs.cache
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\JiufenSoundManager\obj\Debug\netstandard2.0\JiufenSoundManager.AssemblyInfo.cs
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\JiufenSoundManager\obj\Debug\netstandard2.0\JiufenSoundManager.csproj.CoreCompileInputs.cache
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\JiufenSoundManager\obj\Debug\netstandard2.0\JiufenSoundManager.csproj.CopyComplete
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\JiufenSoundManager\obj\Debug\netstandard2.0\JiufenSoundManager.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\JiufenSoundManager\obj\Debug\netstandard2.0\JiufenSoundManager.pdb
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\JiufenSoundManager\bin\Debug\netstandard2.0\UnityEngine.AudioModule.dll
