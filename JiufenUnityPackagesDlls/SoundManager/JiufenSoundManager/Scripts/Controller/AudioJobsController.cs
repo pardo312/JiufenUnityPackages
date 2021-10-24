@@ -16,6 +16,7 @@ namespace Jiufen.Audio
         #region 2.0.Init
         public void Init()
         {
+            DontDestroyOnLoad(this);
             m_jobsTable = new Hashtable();
         }
         #endregion 2.0.Init
