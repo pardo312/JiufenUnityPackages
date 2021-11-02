@@ -1,0 +1,16 @@
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\SceneManager\bin\Debug\netstandard2.0\SceneManager.deps.json
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\SceneManager\bin\Debug\netstandard2.0\SceneManager.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\SceneManager\bin\Debug\netstandard2.0\SceneManager.pdb
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\SceneManager\bin\Debug\netstandard2.0\UnityEngine.CoreModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\SceneManager\bin\Debug\netstandard2.0\UnityEngine.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\SceneManager\bin\Debug\netstandard2.0\UnityEngine.AudioModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\SceneManager\bin\Debug\netstandard2.0\UnityEngine.TextRenderingModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\SceneManager\bin\Debug\netstandard2.0\UnityEngine.IMGUIModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\SceneManager\bin\Debug\netstandard2.0\UnityEngine.JSONSerializeModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\SceneManager\obj\Debug\netstandard2.0\SceneManager.csproj.AssemblyReference.cache
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\SceneManager\obj\Debug\netstandard2.0\SceneManager.AssemblyInfoInputs.cache
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\SceneManager\obj\Debug\netstandard2.0\SceneManager.AssemblyInfo.cs
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\SceneManager\obj\Debug\netstandard2.0\SceneManager.csproj.CoreCompileInputs.cache
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\SceneManager\obj\Debug\netstandard2.0\SceneManager.csproj.CopyComplete
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\SceneManager\obj\Debug\netstandard2.0\SceneManager.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\SceneManager\obj\Debug\netstandard2.0\SceneManager.pdb

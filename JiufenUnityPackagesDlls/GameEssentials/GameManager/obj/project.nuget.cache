@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "JTFEqpfAbLhTBdxidvPN29/6D78NvUQtQKc25EkuWcV6mjBn0DSDfDbFxHHS+1UkJOryUGY2ynvTWGEBFZMyNQ==",
+  "success": true,
+  "projectFilePath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\GameManager\\GameManager.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jiufen\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Jiufen\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
