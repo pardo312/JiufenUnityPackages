@@ -1,0 +1,16 @@
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\InterfaceUnityRefereceValidator\bin\Debug\netstandard2.0\InterfaceUnityRefereceValidator.deps.json
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\InterfaceUnityRefereceValidator\bin\Debug\netstandard2.0\InterfaceUnityRefereceValidator.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\InterfaceUnityRefereceValidator\bin\Debug\netstandard2.0\InterfaceUnityRefereceValidator.pdb
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\InterfaceUnityRefereceValidator\bin\Debug\netstandard2.0\UnityEngine.CoreModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\InterfaceUnityRefereceValidator\bin\Debug\netstandard2.0\UnityEngine.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\InterfaceUnityRefereceValidator\bin\Debug\netstandard2.0\UnityEngine.AudioModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\InterfaceUnityRefereceValidator\bin\Debug\netstandard2.0\UnityEngine.TextRenderingModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\InterfaceUnityRefereceValidator\bin\Debug\netstandard2.0\UnityEngine.IMGUIModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\InterfaceUnityRefereceValidator\bin\Debug\netstandard2.0\UnityEngine.JSONSerializeModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\InterfaceUnityRefereceValidator\obj\Debug\netstandard2.0\InterfaceUnityRefereceValidator.csproj.AssemblyReference.cache
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\InterfaceUnityRefereceValidator\obj\Debug\netstandard2.0\InterfaceUnityRefereceValidator.AssemblyInfoInputs.cache
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\InterfaceUnityRefereceValidator\obj\Debug\netstandard2.0\InterfaceUnityRefereceValidator.AssemblyInfo.cs
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\InterfaceUnityRefereceValidator\obj\Debug\netstandard2.0\InterfaceUnityRefereceValidator.csproj.CoreCompileInputs.cache
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\InterfaceUnityRefereceValidator\obj\Debug\netstandard2.0\InterfaceUnityRefereceValidator.csproj.CopyComplete
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\InterfaceUnityRefereceValidator\obj\Debug\netstandard2.0\InterfaceUnityRefereceValidator.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\InterfaceUnityRefereceValidator\obj\Debug\netstandard2.0\InterfaceUnityRefereceValidator.pdb

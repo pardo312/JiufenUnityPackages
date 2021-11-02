@@ -45,7 +45,7 @@ namespace JiufenPackages.GameManager.Logic
                 gameManagerGO.GetComponent<GameManager>().Init();
             }
 
-            SceneManager.sceneLoaded += m_instance.OnSceneLoad;
+            try { SceneManager.sceneLoaded += m_instance.OnSceneLoad; } catch { }
         }
 
         public void Init()
