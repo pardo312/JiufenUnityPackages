@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace JiufenGames.TetrisAlike.Logic
+namespace JiufenGames.Board.Logic
 {
     public abstract class BoardControllerBase<T> : MonoBehaviour, IBoardController<T>
     {
@@ -27,13 +27,18 @@ namespace JiufenGames.TetrisAlike.Logic
         #region Methods
         public abstract void Init();
 
-        public virtual void CreateBoard(int _rows, int _columns, float _offsetTiles = 1, Action<int, int> _createdTile = null)
+        public virtual void CreateBoard(object payload, Action<int, int> _createdTile = null)
         {
-            m_board = new T[_rows, _columns];
-            for (int i = 0; i < _rows; i++)
-                for (int j = 0; j < _columns; j++)
+            BaseBoardPayload boardPayload;
+            if (payload.GetType() != typeof(BaseBoardPayload))
+                return;
+            boardPayload = payload as BaseBoardPayload;
+
+            m_board = new T[boardPayload._rows, boardPayload._columns];
+            for (int i = 0; i < boardPayload._rows; i++)
+                for (int j = 0; j < boardPayload._columns; j++)
                 {
-                    GameObject instancedGO = Instantiate(m_tilePrefab, m_tileParent.position + new Vector3(j * (1 * _offsetTiles), i * (1 * _offsetTiles), 0), Quaternion.identity, m_tileParent);
+                    GameObject instancedGO = Instantiate(m_tilePrefab, m_tileParent.position + new Vector3(j * (1 * boardPayload._offsetTiles), i * (1 * boardPayload._offsetTiles), 0), Quaternion.identity, m_tileParent);
                     m_board[i, j] = instancedGO.GetComponent<T>();
                     instancedGO.transform.localScale = m_tileParent.localScale;
                     _createdTile?.Invoke(i, j);

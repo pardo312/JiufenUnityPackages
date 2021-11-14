@@ -19,6 +19,7 @@ namespace JiufenGames.TetrisAlike.Logic
                     if (m_instanceField == null)
                     {
                         m_instanceField = this;
+                DontDestroyOnLoad(this);
                     }
                     else
                     {
@@ -36,6 +37,7 @@ namespace JiufenGames.TetrisAlike.Logic
             if (m_instance == null)
             {
                 m_instance = this;
+                DontDestroyOnLoad(this);
             }
             else
             {

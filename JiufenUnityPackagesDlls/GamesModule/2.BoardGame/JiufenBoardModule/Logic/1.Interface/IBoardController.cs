@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace JiufenGames.TetrisAlike.Logic
+namespace JiufenGames.Board.Logic
 {
     public interface IBoardController<T>
     {
@@ -11,6 +11,7 @@ namespace JiufenGames.TetrisAlike.Logic
         T[,] m_board { get; }
 
         void Init();
-        void CreateBoard(int _rows, int _columns,float offset = 1, Action<int,int> createdTile = null);
+        void CreateBoard(object payload, Action<int,int> createdTile = null);
+
     }
 }

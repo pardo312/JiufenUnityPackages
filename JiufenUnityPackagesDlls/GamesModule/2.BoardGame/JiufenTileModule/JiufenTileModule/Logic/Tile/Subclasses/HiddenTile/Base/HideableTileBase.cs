@@ -20,7 +20,7 @@ namespace JiufenGames.TetrisAlike.Logic
         public int m_tileColumn { get => m_tileColumnField; set => m_tileColumnField = value; }
         public bool m_isPartOfHiddenBoard { get => m_isPartOfHiddenBoardField; set => m_isPartOfHiddenBoardField = value; }
         public bool m_isPartOfFirstRowAfterRealBoard { get => m_isPartOfFirstRowAfterRealBoardField; set => m_isPartOfFirstRowAfterRealBoardField = value; }
-        public object m_tileData  { get => m_tileDataField  ; set => m_tileDataField   = value; }
+        public object m_tileData { get => m_tileDataField; set => m_tileDataField = value; }
         #endregion Properties
         #endregion Interface 
         #endregion Fields
