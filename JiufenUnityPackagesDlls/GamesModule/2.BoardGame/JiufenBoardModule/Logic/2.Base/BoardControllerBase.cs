@@ -27,7 +27,7 @@ namespace JiufenGames.Board.Logic
         #region Methods
         public abstract void Init();
 
-        public virtual void CreateBoard(object payload, Action<int, int> _createdTile = null)
+        public virtual void CreateBoard(object payload, Action<int, int> _createdTile = null, Action<object> _endCreationCallback=null)
         {
             BaseBoardPayload boardPayload;
             if (payload.GetType() != typeof(BaseBoardPayload))

@@ -6,7 +6,7 @@ namespace JiufenGames.Board.Logic
 {
     public abstract class BoardControllerSquaredTilesBase<T> : BoardControllerBase<T>
     {
-        public override void CreateBoard(object payload, Action<int, int> _createdTile = null)
+        public override void CreateBoard(object payload, Action<int, int> _createdTile = null, Action<object> _endCreationCallback = null)
         {
             //Init Payload
             SquareTilesBoardPayload boardPayload;
@@ -33,8 +33,9 @@ namespace JiufenGames.Board.Logic
             int endColumn = columns % 2 == 0 ? columns / 2 : (columns / 2) + 1;
 
             //CreateBoard
-            m_board = new T[endRow + (rows / 2), endColumn + (columns / 2)];
+            m_board = new T[((endRow * 2)) - 1, (endColumn * 2) - 1];
             for (int i = -endRow + 1; i < endRow; i++)
+            {
                 for (int j = -endColumn + 1; j < endColumn; j++)
                 {
                     //Instantiate
@@ -46,12 +47,12 @@ namespace JiufenGames.Board.Logic
                     instanceRectTransform.sizeDelta = new Vector2(sizeForChilds, sizeForChilds);
 
                     //Set Board and tile
-                    m_board[i + (endRow-1), j + (endColumn-1)] = instancedGO.GetComponent<T>();
+                    m_board[(i + (endRow)) - 1, (j + (endColumn)) - 1] = instancedGO.GetComponent<T>();
 
                     //Callback
-                    _createdTile?.Invoke(i + endRow, j + endColumn);
+                    _createdTile?.Invoke((i + (endRow)) - 1, (j + (endColumn)) - 1);
                 }
+            }
         }
-
     }
 }

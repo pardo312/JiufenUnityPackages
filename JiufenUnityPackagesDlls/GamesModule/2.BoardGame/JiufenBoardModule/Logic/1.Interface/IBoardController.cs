@@ -11,7 +11,7 @@ namespace JiufenGames.Board.Logic
         T[,] m_board { get; }
 
         void Init();
-        void CreateBoard(object payload, Action<int,int> createdTile = null);
+        void CreateBoard(object payload, Action<int,int> createdTile = null, Action<object> _endCreationCallback = null);
 
     }
 }

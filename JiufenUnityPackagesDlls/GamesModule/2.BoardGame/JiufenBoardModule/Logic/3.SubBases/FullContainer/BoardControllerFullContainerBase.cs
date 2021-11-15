@@ -6,7 +6,7 @@ namespace JiufenGames.Board.Logic
 {
     public abstract class BoardControllerFullContainerBase<T> : BoardControllerBase<T>
     {
-        public override void CreateBoard(object payload, Action<int, int> _createdTile = null)
+        public override void CreateBoard(object payload, Action<int, int> _createdTile = null, Action<object> _endCreationCallback = null)
         {
             //Init Payload
             BaseBoardPayload boardPayload;
