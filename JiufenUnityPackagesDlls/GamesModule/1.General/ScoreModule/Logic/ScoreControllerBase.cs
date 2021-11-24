@@ -1,4 +1,4 @@
-﻿using JiufenModules.ScoreModule.Example;
+﻿using JiufenModules.InterfaceReferenceValidator;
 using UnityEngine;
 using UnityEngine.Scripting;
 

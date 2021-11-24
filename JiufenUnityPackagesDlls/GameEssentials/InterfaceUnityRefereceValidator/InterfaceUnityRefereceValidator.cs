@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace JiufenModules.ScoreModule.Example
+namespace JiufenModules.InterfaceReferenceValidator
 {
     public static class InterfaceUnityRefereceValidator
     {
@@ -30,12 +30,12 @@ namespace JiufenModules.ScoreModule.Example
             }
         }
 
-        public static List<T> ValidateIfUnityObjectArrayIsOfType<T>(UnityEngine.Object[] unityObjects, string classNamespace = null)
+        public static List<T> ValidateIfUnityObjectArrayIsOfType<T>(UnityEngine.Object[] _unityObjects, string _classNamespace = null, string _classAssembly = null)
         {
             List<T> returnList = new List<T>();
-            for (int i = 0; i < unityObjects.Length; i++)
+            for (int i = 0; i < _unityObjects.Length; i++)
             {
-                UnityEngine.Object item = unityObjects[i];
+                UnityEngine.Object item = _unityObjects[i];
 
                 if (item == null)
                     continue;
@@ -51,10 +51,19 @@ namespace JiufenModules.ScoreModule.Example
                 }
                 else
                 {
-                    Type classType = Type.GetType(classNamespace + item.name);
+                    string fullNameOfType = _classNamespace + item.name + (_classAssembly != null ? $", {_classAssembly}" : "");
+                    Type classType = Type.GetType(fullNameOfType);
+
                     if (classType != null)
                     {
-                        returnList.Add((T)Activator.CreateInstance(classType));
+                        try
+                        {
+                            returnList.Add((T)Activator.CreateInstance(classType));
+                        }
+                        catch 
+                        {
+                            Debug.LogError($"<color=red>ValidateInterface:</color>  The item: [{item.name}] is not a {typeof(T).Name} subclass. Please check the reference");
+                        }
                         continue;
                     }
                     Debug.LogError($"<color=red>ValidateInterface:</color>  The item: [{item.name}] is not a {typeof(T).Name} subclass. Please check the reference");
