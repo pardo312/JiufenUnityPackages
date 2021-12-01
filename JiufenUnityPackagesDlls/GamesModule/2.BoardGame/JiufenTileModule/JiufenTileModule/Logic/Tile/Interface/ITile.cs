@@ -7,7 +7,7 @@ namespace JiufenGames.TetrisAlike.Logic
         int m_tileRow { get; set; }
         int m_tileColumn { get; set; }
 
-        object[] ChangeTileData(object[] _methodParams = null);
+        object ChangeTileData(object _payload = null);
         void ResetTile();
     }
 }

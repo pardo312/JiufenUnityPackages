@@ -1,4 +1,3 @@
-D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GamesModule\2.BoardGame\JiufenTileModule\JiufenTileModule\obj\Debug\netstandard2.0\JiufenTileModule.csproj.AssemblyReference.cache
 D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GamesModule\2.BoardGame\JiufenTileModule\JiufenTileModule\obj\Debug\netstandard2.0\JiufenTileModule.AssemblyInfoInputs.cache
 D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GamesModule\2.BoardGame\JiufenTileModule\JiufenTileModule\obj\Debug\netstandard2.0\JiufenTileModule.AssemblyInfo.cs
 D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GamesModule\2.BoardGame\JiufenTileModule\JiufenTileModule\obj\Debug\netstandard2.0\JiufenTileModule.csproj.CoreCompileInputs.cache

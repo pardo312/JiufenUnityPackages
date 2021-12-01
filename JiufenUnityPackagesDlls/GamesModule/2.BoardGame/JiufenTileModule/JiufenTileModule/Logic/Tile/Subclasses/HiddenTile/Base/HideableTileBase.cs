@@ -46,11 +46,11 @@ namespace JiufenGames.TetrisAlike.Logic
             ChangeTileData();
         }
 
-        public virtual object[] ChangeTileData(object[] _methodParams = null)
+        public virtual object ChangeTileData(object _payload = null)
         {
-            if (_methodParams == null)
+            if (_payload == null)
                 return GetDefaultTileData();
-            return _methodParams;
+            return _payload;
         }
 
         public abstract object[] GetDefaultTileData();
