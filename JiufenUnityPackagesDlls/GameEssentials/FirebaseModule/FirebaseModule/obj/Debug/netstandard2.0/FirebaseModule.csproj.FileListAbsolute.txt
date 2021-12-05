@@ -1,0 +1,17 @@
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\FirebaseModule\FirebaseModule\bin\Debug\netstandard2.0\FirebaseModule.deps.json
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\FirebaseModule\FirebaseModule\bin\Debug\netstandard2.0\FirebaseModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\FirebaseModule\FirebaseModule\bin\Debug\netstandard2.0\FirebaseModule.pdb
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\FirebaseModule\FirebaseModule\bin\Debug\netstandard2.0\Newtonsoft.Json.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\FirebaseModule\FirebaseModule\bin\Debug\netstandard2.0\UnityEngine.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\FirebaseModule\FirebaseModule\bin\Debug\netstandard2.0\UnityEngine.CoreModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\FirebaseModule\FirebaseModule\bin\Debug\netstandard2.0\UnityEngine.AudioModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\FirebaseModule\FirebaseModule\bin\Debug\netstandard2.0\UnityEngine.TextRenderingModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\FirebaseModule\FirebaseModule\bin\Debug\netstandard2.0\UnityEngine.IMGUIModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\FirebaseModule\FirebaseModule\bin\Debug\netstandard2.0\UnityEngine.JSONSerializeModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\FirebaseModule\FirebaseModule\obj\Debug\netstandard2.0\FirebaseModule.csproj.AssemblyReference.cache
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\FirebaseModule\FirebaseModule\obj\Debug\netstandard2.0\FirebaseModule.AssemblyInfoInputs.cache
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\FirebaseModule\FirebaseModule\obj\Debug\netstandard2.0\FirebaseModule.AssemblyInfo.cs
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\FirebaseModule\FirebaseModule\obj\Debug\netstandard2.0\FirebaseModule.csproj.CoreCompileInputs.cache
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\FirebaseModule\FirebaseModule\obj\Debug\netstandard2.0\FirebaseModule.csproj.CopyComplete
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\FirebaseModule\FirebaseModule\obj\Debug\netstandard2.0\FirebaseModule.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\FirebaseModule\FirebaseModule\obj\Debug\netstandard2.0\FirebaseModule.pdb
