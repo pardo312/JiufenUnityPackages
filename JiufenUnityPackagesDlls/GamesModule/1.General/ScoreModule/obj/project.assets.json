@@ -185,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GamesModule\\1.General\\ScoreModule\\JiufenScoreModule.csproj",
+      "projectUniqueName": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GamesModule\\1.General\\ScoreModule\\JiufenScoreModule.csproj",
       "projectName": "JiufenScoreModule",
-      "projectPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GamesModule\\1.General\\ScoreModule\\JiufenScoreModule.csproj",
+      "projectPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GamesModule\\1.General\\ScoreModule\\JiufenScoreModule.csproj",
       "packagesPath": "C:\\Users\\Jiufen\\.nuget\\packages\\",
-      "outputPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GamesModule\\1.General\\ScoreModule\\obj\\",
+      "outputPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GamesModule\\1.General\\ScoreModule\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jiufen\\AppData\\Roaming\\NuGet\\NuGet.Config",

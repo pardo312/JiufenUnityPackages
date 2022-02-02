@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AWbNxvGM2L13wP/toffNfIjxxWTDblMjyvFvSN4nx4Yl5YFklVSYoTyQE59Byj7h2vw3S2o+evzvG/wfCmrurQ==",
+  "dgSpecHash": "Xg4ekNP/UiWQ94ku0qZCdMj4ARrrohkuYqTpD6r0u7++SkDRR6PxQ+eYLhT2sMRY9A2PsJFr2DpzgXEGJN/GFQ==",
   "success": true,
-  "projectFilePath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\InputsManager\\InputsManager.csproj",
+  "projectFilePath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\InputsManager\\InputsManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jiufen\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Jiufen\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

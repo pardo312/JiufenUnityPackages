@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ntJTeyCYW40SlEKvNnpWl8HSaIAFrKos7l3knTbH79qMsfWNjJ6tncvwm9YVAEHKBSIu+UBvbHex0W/i7nAbtA==",
+  "dgSpecHash": "NQ3nhgtzk09Chxft41/51cF2beXCEIn0foGbMxqnQLp5DH07Pb61llCe4sQv+qXBsxfn6MsWN6QWxlRvqoVykg==",
   "success": true,
-  "projectFilePath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\InterfaceUnityRefereceValidator\\JiufenInterfaceUnityRefereceValidator.csproj",
+  "projectFilePath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\InterfaceUnityRefereceValidator\\JiufenInterfaceUnityRefereceValidator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jiufen\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Jiufen\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

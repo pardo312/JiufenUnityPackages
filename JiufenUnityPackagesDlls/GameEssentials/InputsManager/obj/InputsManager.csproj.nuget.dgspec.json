@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\InputsManager\\InputsManager.csproj": {}
+    "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\InputsManager\\InputsManager.csproj": {}
   },
   "projects": {
-    "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\InputsManager\\InputsManager.csproj": {
+    "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\InputsManager\\InputsManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\InputsManager\\InputsManager.csproj",
+        "projectUniqueName": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\InputsManager\\InputsManager.csproj",
         "projectName": "InputsManager",
-        "projectPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\InputsManager\\InputsManager.csproj",
+        "projectPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\InputsManager\\InputsManager.csproj",
         "packagesPath": "C:\\Users\\Jiufen\\.nuget\\packages\\",
-        "outputPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\InputsManager\\obj\\",
+        "outputPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\InputsManager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jiufen\\AppData\\Roaming\\NuGet\\NuGet.Config",

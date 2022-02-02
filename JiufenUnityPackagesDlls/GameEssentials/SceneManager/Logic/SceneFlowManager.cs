@@ -1,4 +1,3 @@
-using JiufenPackages.SceneFlow.Model;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,84 +6,71 @@ namespace JiufenPackages.SceneFlow.Logic
 {
     public class SceneFlowManager : MonoBehaviour
     {
-        #region Fields
+        #region ----Fields----
+        [SerializeField] private string loadingSceneName = "Loading";
 
-        [SerializeField] private SceneFlowConfigScriptable sceneFlowConfigScriptable;
         private Dictionary<string, IInitializable> initilizables = new Dictionary<string, IInitializable>();
-        private string m_previousScene = "";
+        private string previousScene = "";
+        #endregion ----Fields----
 
-        #endregion Fields
-
-        #region Methods
-
+        #region ----Methods----
         #region Init
-
         public void Init()
         {
-            for (int i = 0; i < GetComponents<IInitializable>().Length; i++)
-            {
-                this.initilizables.Add(GetComponents<IInitializable>()[i].m_sceneName, GetComponents<IInitializable>()[i]);
-            }
-        }
+            IInitializable[] initializableList = GetComponents<IInitializable>();
 
+            for (int i = 0; i < initializableList.Length; i++)
+                initilizables.Add(initializableList[i].m_sceneName, initializableList[i]);
+        }
         #endregion Init
 
         #region Change Scene
-
         public void ChangeSceneTo(string nameOfScene)
         {
-            m_previousScene = SceneManager.GetActiveScene().name;
+            previousScene = SceneManager.GetActiveScene().name;
             ShowLoadingScene();
             LoadScene(nameOfScene);
         }
 
         private void LoadScene(string nameOfScene)
         {
-            if (sceneFlowConfigScriptable.scenesNames.Contains(nameOfScene))
+            if (CheckIfSceneExist(nameOfScene))
             {
                 SceneManager.LoadSceneAsync(nameOfScene);
             }
             else
             {
-                if (nameOfScene.CompareTo(m_previousScene) != 0)
+                if (nameOfScene.CompareTo(previousScene) != 0)
                 {
-                    SceneManager.LoadScene(m_previousScene);
-                    Debug.Log($"Scene {nameOfScene} doesn't exist. Check the SceneFlowScriptable.");
+                    SceneManager.LoadScene(previousScene);
+                    Debug.Log($"Scene {nameOfScene} doesn't exist in build. Going back to previous scene: {previousScene}");
                 }
                 else
                 {
-                    Debug.Log($"Previours Scene {m_previousScene} doesn't exist. Check the SceneFlowScriptable.");
+                    Debug.LogError($"SceneFlow Fatal: Scene {nameOfScene} doesn't exist in build. Previous Scene is equal to current scene so couldn't go back.");
                 }
             }
         }
-
         #endregion Change Scene
 
         #region LoadingScene
-
         private void ShowLoadingScene()
         {
-            SceneManager.LoadSceneAsync(sceneFlowConfigScriptable.loadingScene);
+            SceneManager.LoadSceneAsync(loadingSceneName);
         }
 
         private void HideLoadingScene(bool loadingSuccess)
         {
             if (loadingSuccess)
-            {
-                SceneManager.UnloadSceneAsync(sceneFlowConfigScriptable.loadingScene);
-            }
+                SceneManager.UnloadSceneAsync(loadingSceneName);
         }
-
         #endregion LoadingScene
 
         #region Init Scene
-
         public void InitScene(string sceneName)
         {
-            if (sceneName != sceneFlowConfigScriptable.loadingScene)
-            {
+            if (sceneName != loadingSceneName)
                 initilizables[sceneName].GetData(InitializeSceneController);
-            }
         }
 
         private void InitializeSceneController(object data)
@@ -92,12 +78,11 @@ namespace JiufenPackages.SceneFlow.Logic
             SceneController sceneController = FindObjectOfType<SceneController>();
             sceneController.Init(data, (successLoadingScene) =>
             {
-                if (CheckIfSceneExist())
-                    HideLoadingScene(successLoadingScene);
+                HideLoadingScene(successLoadingScene);
             });
         }
 
-        private bool CheckIfSceneExist()
+        private bool CheckIfSceneExist(string nameOfScene)
         {
             List<string> sceneLoadedNames = new List<string>();
             for (int i = 0; i < SceneManager.sceneCount; i++)
@@ -105,15 +90,13 @@ namespace JiufenPackages.SceneFlow.Logic
                 sceneLoadedNames.Add(SceneManager.GetSceneAt(i).name);
             }
 
-            if (sceneLoadedNames.Contains(sceneFlowConfigScriptable.loadingScene))
+            if (sceneLoadedNames.Contains(nameOfScene))
             {
                 return true;
             }
             return false;
         }
-
         #endregion Init Scene
-
-        #endregion Methods
+        #endregion ----Methods----
     }
 }

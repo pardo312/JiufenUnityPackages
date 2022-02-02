@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YIO7ceyQvZ/lk9Fj3pF1j0uA0gFLWkdXPlpfZUcgb+eoleXHgys66SmxiJ1g6sgHBPLCYgWhMWSMnNoZ9Xa+IQ==",
+  "dgSpecHash": "ohWlmL7msQDb0f5YdkcBpr5NyWjnRTmpLDZxPY+QWqwlxeopmREBm3JE7dWqzDid7/EP3cYL50HwZ3TkoTwyiw==",
   "success": true,
-  "projectFilePath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GamesModule\\1.General\\ScoreModule\\JiufenScoreModule.csproj",
+  "projectFilePath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GamesModule\\1.General\\ScoreModule\\JiufenScoreModule.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jiufen\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Jiufen\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

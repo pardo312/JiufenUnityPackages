@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\InterfaceUnityRefereceValidator\\JiufenInterfaceUnityRefereceValidator.csproj": {}
+    "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\InterfaceUnityRefereceValidator\\JiufenInterfaceUnityRefereceValidator.csproj": {}
   },
   "projects": {
-    "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\InterfaceUnityRefereceValidator\\JiufenInterfaceUnityRefereceValidator.csproj": {
+    "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\InterfaceUnityRefereceValidator\\JiufenInterfaceUnityRefereceValidator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\InterfaceUnityRefereceValidator\\JiufenInterfaceUnityRefereceValidator.csproj",
+        "projectUniqueName": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\InterfaceUnityRefereceValidator\\JiufenInterfaceUnityRefereceValidator.csproj",
         "projectName": "JiufenInterfaceUnityRefereceValidator",
-        "projectPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\InterfaceUnityRefereceValidator\\JiufenInterfaceUnityRefereceValidator.csproj",
+        "projectPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\InterfaceUnityRefereceValidator\\JiufenInterfaceUnityRefereceValidator.csproj",
         "packagesPath": "C:\\Users\\Jiufen\\.nuget\\packages\\",
-        "outputPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\InterfaceUnityRefereceValidator\\obj\\",
+        "outputPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\InterfaceUnityRefereceValidator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jiufen\\AppData\\Roaming\\NuGet\\NuGet.Config",

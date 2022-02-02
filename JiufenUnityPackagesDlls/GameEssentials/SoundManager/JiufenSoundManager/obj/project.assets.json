@@ -185,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\SoundManager\\JiufenSoundManager\\JiufenSoundManager.csproj",
+      "projectUniqueName": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\SoundManager\\JiufenSoundManager\\JiufenSoundManager.csproj",
       "projectName": "JiufenSoundManager",
-      "projectPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\SoundManager\\JiufenSoundManager\\JiufenSoundManager.csproj",
+      "projectPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\SoundManager\\JiufenSoundManager\\JiufenSoundManager.csproj",
       "packagesPath": "C:\\Users\\Jiufen\\.nuget\\packages\\",
-      "outputPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\SoundManager\\JiufenSoundManager\\obj\\",
+      "outputPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\SoundManager\\JiufenSoundManager\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jiufen\\AppData\\Roaming\\NuGet\\NuGet.Config",

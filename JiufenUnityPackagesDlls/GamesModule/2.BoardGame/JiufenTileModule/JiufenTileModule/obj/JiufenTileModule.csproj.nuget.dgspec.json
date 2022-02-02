@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenTileModule\\JiufenTileModule\\JiufenTileModule.csproj": {}
+    "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenTileModule\\JiufenTileModule\\JiufenTileModule.csproj": {}
   },
   "projects": {
-    "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenTileModule\\JiufenTileModule\\JiufenTileModule.csproj": {
+    "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenTileModule\\JiufenTileModule\\JiufenTileModule.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenTileModule\\JiufenTileModule\\JiufenTileModule.csproj",
+        "projectUniqueName": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenTileModule\\JiufenTileModule\\JiufenTileModule.csproj",
         "projectName": "JiufenTileModule",
-        "projectPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenTileModule\\JiufenTileModule\\JiufenTileModule.csproj",
+        "projectPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenTileModule\\JiufenTileModule\\JiufenTileModule.csproj",
         "packagesPath": "C:\\Users\\Jiufen\\.nuget\\packages\\",
-        "outputPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenTileModule\\JiufenTileModule\\obj\\",
+        "outputPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenTileModule\\JiufenTileModule\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jiufen\\AppData\\Roaming\\NuGet\\NuGet.Config",

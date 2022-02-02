@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wIf8oJ/wn1uqJWk16Va0ZXm/kDUYHr0yl6lkEHEl07aGqu3EEDgUM47mx2YhcWDl8W5epfJCIW0PtznCrlA8HQ==",
+  "dgSpecHash": "O6os2R5TA09Lv7V9gIVnDmjGD34M3JoMXRQNdmz2303nd3TNvb8kGUIF61dY+QZdBuSUw1Pe3G8Vn3kqeJBOFQ==",
   "success": true,
-  "projectFilePath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\SoundManager\\JiufenSoundManager\\JiufenSoundManager.csproj",
+  "projectFilePath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\SoundManager\\JiufenSoundManager\\JiufenSoundManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jiufen\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Jiufen\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

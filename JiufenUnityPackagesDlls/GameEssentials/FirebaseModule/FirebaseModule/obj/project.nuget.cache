@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xNhLTCOjIDGBEvt5UAKJu4WRF6+rqwmEfpEH2QS2uhUayhPTWDUTPgAeJwB9Ba6LlGzKDHd4a7q5h04FVG9t5w==",
+  "dgSpecHash": "Q7AXevgyW7t7ed1iSSpRFdBpfzmM+V/x2XBn4aTZKEsFDH/Gn53SfmB1+MNbVTNAlmCEIbEHKbHu6xor5XGPrg==",
   "success": true,
-  "projectFilePath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\FirebaseModule\\FirebaseModule\\FirebaseModule.csproj",
+  "projectFilePath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\FirebaseModule\\FirebaseModule\\FirebaseModule.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jiufen\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Jiufen\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

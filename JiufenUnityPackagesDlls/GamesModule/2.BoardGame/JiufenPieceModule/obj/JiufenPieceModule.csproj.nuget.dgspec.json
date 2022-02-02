@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenPieceModule\\JiufenPieceModule.csproj": {}
+    "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenPieceModule\\JiufenPieceModule.csproj": {}
   },
   "projects": {
-    "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenPieceModule\\JiufenPieceModule.csproj": {
+    "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenPieceModule\\JiufenPieceModule.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenPieceModule\\JiufenPieceModule.csproj",
+        "projectUniqueName": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenPieceModule\\JiufenPieceModule.csproj",
         "projectName": "JiufenPieceModule",
-        "projectPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenPieceModule\\JiufenPieceModule.csproj",
+        "projectPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenPieceModule\\JiufenPieceModule.csproj",
         "packagesPath": "C:\\Users\\Jiufen\\.nuget\\packages\\",
-        "outputPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenPieceModule\\obj\\",
+        "outputPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenPieceModule\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jiufen\\AppData\\Roaming\\NuGet\\NuGet.Config",

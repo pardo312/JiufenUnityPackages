@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace JiufenGames.TetrisAlike.Logic
+namespace JiufenGames.InputManager.Logic
 {
 
     public abstract class InputsControllerBase<T> : MonoBehaviour, IInputsController<T>
     {
 
-#if !NET_STANDARD_2_0
         #region Singleton
+#if !NET_STANDARD_2_0
 
                 private static IInputsController<T> m_instanceField;
                 public static IInputsController<T> m_instance => m_instaceField;
@@ -26,9 +26,7 @@ namespace JiufenGames.TetrisAlike.Logic
                         DestroyImmediate(this.gameObject);
                     }
                 }
-        #endregion Singleton
 #else
-        #region Singleton
 
         public static IInputsController<T> m_instance;
         public virtual void Awake()
@@ -44,8 +42,8 @@ namespace JiufenGames.TetrisAlike.Logic
                 DestroyImmediate(this.gameObject);
             }
         }
-        #endregion Singleton
 #endif
+        #endregion Singleton
 
         #region Fields
         #region Backing Fields
@@ -53,8 +51,8 @@ namespace JiufenGames.TetrisAlike.Logic
         [Header("Inputs Config")] [SerializeField] private List<UnityEngine.Object> m_inputsListenerField;
         private float m_initialTimeBetweenInputsField;
         private float m_currentTimeBetweenInputsField;
-        private List<T> m_currentPressedInputsField;
-        private List<T> m_lastInputPressedField;
+        private List<T> m_currentPressedInputsField = new List<T>();
+        private List<T> m_lastInputPressedField = new List<T>();
         private int m_neededTimePressesField;
         private float m_timesPressedField;
         private Dictionary<string, Action<object[]>> m_actionsDictionaryField = new Dictionary<string, Action<object[]>>();

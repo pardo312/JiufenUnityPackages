@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ml4OyhcmH1iVkAAaiNpW7PG+jmUAapwBz8jl+v6Bzk9uvhV4lndHsBi/btr478v0r45nvrfYTwQhJdbt6uDl7g==",
+  "dgSpecHash": "Zs92dliaw0lb2AGyhy0l5sbUqms2M/edHTE4tHCXXMMuA78HuYqn0jhhbBnu/oPqh/s2DlTnQ3Z92iFvHbHurg==",
   "success": true,
-  "projectFilePath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenTileModule\\JiufenTileModule\\JiufenTileModule.csproj",
+  "projectFilePath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GamesModule\\2.BoardGame\\JiufenTileModule\\JiufenTileModule\\JiufenTileModule.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jiufen\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Jiufen\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

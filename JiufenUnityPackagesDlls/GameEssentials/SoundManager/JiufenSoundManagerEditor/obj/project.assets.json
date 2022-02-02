@@ -201,11 +201,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\SoundManager\\JiufenSoundManagerEditor\\JiufenSoundManagerEditor.csproj",
+      "projectUniqueName": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\SoundManager\\JiufenSoundManagerEditor\\JiufenSoundManagerEditor.csproj",
       "projectName": "JiufenSoundManagerEditor",
-      "projectPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\SoundManager\\JiufenSoundManagerEditor\\JiufenSoundManagerEditor.csproj",
+      "projectPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\SoundManager\\JiufenSoundManagerEditor\\JiufenSoundManagerEditor.csproj",
       "packagesPath": "C:\\Users\\Jiufen\\.nuget\\packages\\",
-      "outputPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\SoundManager\\JiufenSoundManagerEditor\\obj\\",
+      "outputPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\SoundManager\\JiufenSoundManagerEditor\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jiufen\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -222,8 +222,8 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\SoundManager\\JiufenSoundManager\\JiufenSoundManager.csproj": {
-              "projectPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\SoundManager\\JiufenSoundManager\\JiufenSoundManager.csproj"
+            "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\SoundManager\\JiufenSoundManager\\JiufenSoundManager.csproj": {
+              "projectPath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\SoundManager\\JiufenSoundManager\\JiufenSoundManager.csproj"
             }
           }
         }

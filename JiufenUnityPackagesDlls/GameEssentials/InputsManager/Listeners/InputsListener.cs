@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace JiufenGames.TetrisAlike.Logic
+namespace JiufenGames.InputManager.Logic
 {
     public interface InputsListener<T>
     {

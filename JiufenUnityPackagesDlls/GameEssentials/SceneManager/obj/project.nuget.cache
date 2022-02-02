@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OrEIqmwoCYqPvmFlCaLxni0K8XOkU0TasNFKjRQ4xGApNa2yyzM0V5lIkUNxnn59uL5vRcSIxrCB+xMtTiyIPw==",
+  "dgSpecHash": "N48ntlFiNfqc2dab7ebL9rfNXRHWE8tZTXjBuDVpsazDDk7gF8vUjfHmzwgrJJE0k6XetsjhV7L0fVQCWwBwIw==",
   "success": true,
-  "projectFilePath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\GAMES\\JiufenUnityPackages\\JiufenUnityPackagesDlls\\GameEssentials\\SceneManager\\SceneManager.csproj",
+  "projectFilePath": "D:\\5.Proyectos\\Unity\\2. PERSONAL\\2.PACKAGES\\JiufenUnityPackagesDlls\\GameEssentials\\SceneManager\\SceneManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jiufen\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Jiufen\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

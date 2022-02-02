@@ -14,3 +14,5 @@ D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDl
 D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\GameManager\obj\Debug\netstandard2.0\GameManager.csproj.CopyComplete
 D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\GameManager\obj\Debug\netstandard2.0\GameManager.dll
 D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\GameManager\obj\Debug\netstandard2.0\GameManager.pdb
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\GameManager\bin\Debug\netstandard2.0\SceneManager.dll
+D:\5.Proyectos\Unity\2. PERSONAL\GAMES\JiufenUnityPackages\JiufenUnityPackagesDlls\GameEssentials\GameManager\bin\Debug\netstandard2.0\SceneManager.pdb
