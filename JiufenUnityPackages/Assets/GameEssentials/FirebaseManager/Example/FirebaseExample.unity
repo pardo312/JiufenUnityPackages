@@ -365,7 +365,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 81312748}
-        m_TargetAssemblyTypeName: ExampleMaxScoreModel, Assembly-CSharp
+        m_TargetAssemblyTypeName: ExampleMaxScoreModel, FirebaseModule
         m_MethodName: SetMaxScore
         m_Mode: 1
         m_Arguments:
@@ -1008,7 +1008,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 81312748}
-        m_TargetAssemblyTypeName: ExampleMaxScoreModel, Assembly-CSharp
+        m_TargetAssemblyTypeName: ExampleMaxScoreModel, FirebaseModule
         m_MethodName: GetMaxScore
         m_Mode: 1
         m_Arguments:
@@ -1141,7 +1141,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 81312748}
-        m_TargetAssemblyTypeName: ExampleMaxScoreModel, Assembly-CSharp
+        m_TargetAssemblyTypeName: ExampleMaxScoreModel, FirebaseModule
         m_MethodName: DeleteMaxScore
         m_Mode: 1
         m_Arguments:

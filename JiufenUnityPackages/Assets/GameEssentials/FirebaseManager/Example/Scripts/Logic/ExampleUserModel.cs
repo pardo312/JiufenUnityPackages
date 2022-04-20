@@ -29,7 +29,7 @@ public class ExampleUserModel : MonoBehaviour
 
     public void DELETEUser()
     {
-        FirebaseRequest.instance.FirebaseListRequestPetiton<UserDto>(baseUrl, 1, null, RequestType.DELETE);
+        FirebaseRequest.instance.FirebaseListRequestPetiton<UserDto>(baseUrl, 0, null, RequestType.DELETE);
     }
 
     public void RequestUsersCallback(bool success, FirebaseListDto<UserDto> data)

@@ -86,8 +86,12 @@ public class FirebaseRequest : MonoBehaviour
         }
         else
         {
-            string result = request.downloadHandler.text;
-            result = result.Replace("\\", string.Empty);
+            string result = "";
+            if (request.downloadHandler != null)
+            {
+                result = request.downloadHandler.text;
+                result = result.Replace("\\", string.Empty);
+            }
 
             T responseR = default(T);
             if (!String.IsNullOrEmpty(result) && result != "null")
