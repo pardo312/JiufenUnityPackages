@@ -10,7 +10,7 @@ public static class FirebaseRequest
 {
     #region  Methods
     #region SingleObject Request 
-    public static async void FirebaseObjectRequestPetiton<T>(string _url, object _payload = null, Action<bool, T> _callback = null, RequestType _type = RequestType.GET)
+    public static async void FirebaseObjectRequestPetiton<T>(string _url, string authToken = null, object _payload = null, Action<bool, T> _callback = null, RequestType _type = RequestType.GET)
     {
         StringContent data = null;
         if (_payload != null)
@@ -21,16 +21,21 @@ public static class FirebaseRequest
 
             if (_type == RequestType.PATCH)
             {
-                _url = _url.Remove(_url.LastIndexOf("/")+1, _url.Length - (_url.LastIndexOf("/")+1));
+                _url = _url.Remove(_url.LastIndexOf("/") + 1, _url.Length - (_url.LastIndexOf("/") + 1));
             }
 
             _url += ".json";
+            if (authToken != null)
+                _url += $"?auth={authToken}";
+
             if (_type == RequestType.GET)
                 _url += SetGetParameters(json);
         }
         else
         {
             _url += ".json";
+            if (authToken != null)
+                _url += $"?auth={authToken}";
         }
 
 
@@ -76,7 +81,7 @@ public static class FirebaseRequest
     #endregion SingleObject Request 
 
     #region List Request Petiton
-    public static async void FirebaseListRequestPetiton<T>(string _url, object _payload = null, Action<bool, FirebaseListDto<T>> _callback = null, RequestType _type = RequestType.GET, bool patchWithFinalPayload = false)
+    public static async void FirebaseListRequestPetiton<T>(string _url, string authToken = null, object _payload = null, Action<bool, FirebaseListDto<T>> _callback = null, RequestType _type = RequestType.GET, bool patchWithFinalPayload = false)
     {
         StringContent data = null;
         if (_payload != null)
@@ -92,10 +97,10 @@ public static class FirebaseRequest
             {
                 if (!patchWithFinalPayload)
                 {
-                    SetPayloadPatchRequest(_url, json, (finalJson) =>
-                      {
-                          FirebaseListRequestPetiton<T>(_url, finalJson, _callback, _type, true);
-                      });
+                    SetPayloadPatchRequest(_url, authToken, json, (finalJson) =>
+                       {
+                           FirebaseListRequestPetiton<T>(_url, authToken, finalJson, _callback, _type, true);
+                       });
                     return;
                 }
                 else
@@ -106,12 +111,15 @@ public static class FirebaseRequest
             }
             else if (_type == RequestType.DELETE)
             {
-                LowerChildCount(_url);
+                LowerChildCount(_url, authToken);
                 _url += $"/List/{(int)_payload}";
             }
 
 
             _url += ".json";
+            if (authToken != null)
+                _url += $"?auth={authToken}";
+
             data = new StringContent(json, Encoding.UTF8, "application/json");
             if (_type == RequestType.GET)
                 _url += SetGetParameters(json);
@@ -119,6 +127,8 @@ public static class FirebaseRequest
         else
         {
             _url += ".json";
+            if (authToken != null)
+                _url += $"?auth={authToken}";
         }
 
 
@@ -164,7 +174,7 @@ public static class FirebaseRequest
                     if (!String.IsNullOrEmpty(result) && result != "null")
                         _callback(true, null);
                     else
-                        _callback(false,null);
+                        _callback(false, null);
                 }
                 else
                 {
@@ -178,38 +188,38 @@ public static class FirebaseRequest
     }
 
     #region Patch Payload Set
-    private static void SetPayloadPatchRequest(string _url, string _originalJson, Action<string> _finalPayloadCallback)
+    private static void SetPayloadPatchRequest(string _url, string authToken, string _originalJson, Action<string> _finalPayloadCallback)
     {
         string dq = ('"' + "");
-        GetNumberOfListChilds(_url, (number) =>
-         {
-             SetNumberOfListChilds(_url, number + 1);
-
-             string finalJson = "{" + dq + number + dq + ":" + _originalJson + "}";
-             _finalPayloadCallback?.Invoke(finalJson);
-         });
-    }
-
-    public static void GetNumberOfListChilds(string _url, Action<int> _response)
-    {
-        FirebaseObjectRequestPetiton<int>(_url + "/ChildCount", null, (success, data) =>
+        GetNumberOfListChilds(_url, authToken, (number) =>
           {
-              if (success)
-              {
-                  _response?.Invoke(data);
-              }
-              else
-              {
-                  SetNumberOfListChilds(_url, 0);
-                  _response.Invoke(0);
-              }
-          }, RequestType.GET);
+              SetNumberOfListChilds(_url, authToken, number + 1);
+
+              string finalJson = "{" + dq + number + dq + ":" + _originalJson + "}";
+              _finalPayloadCallback?.Invoke(finalJson);
+          });
     }
 
-    private static void SetNumberOfListChilds(string _url, int _newChildCount)
+    public static void GetNumberOfListChilds(string _url, string authToken, Action<int> _response)
+    {
+        FirebaseObjectRequestPetiton<int>(_url + "/ChildCount", authToken, _callback: (success, data) =>
+           {
+               if (success)
+               {
+                   _response?.Invoke(data);
+               }
+               else
+               {
+                   SetNumberOfListChilds(_url, authToken, 0);
+                   _response.Invoke(0);
+               }
+           }, _type: RequestType.GET);
+    }
+
+    private static void SetNumberOfListChilds(string _url, string authToken, int _newChildCount)
     {
         FirebaseListRequestPetiton<ChildCountPayload>(
-            _url,
+            _url, authToken,
             new ChildCountPayload() { ChildCount = _newChildCount }, null,
             RequestType.PATCH, true
         );
@@ -217,15 +227,16 @@ public static class FirebaseRequest
     #endregion Patch Payload Set
 
     #region Delete Set
-    public static void LowerChildCount(string _url)
+    public static void LowerChildCount(string _url, string authToken)
     {
-        GetNumberOfListChilds(_url, (number) =>
-         {
-             SetNumberOfListChilds(_url, number - 1);
-         });
+        GetNumberOfListChilds(_url, authToken, (number) =>
+          {
+              SetNumberOfListChilds(_url, authToken, number - 1);
+          });
     }
     #endregion Delete Set
     #endregion List Request Petiton
+
     #region Helpers
     private static string SetGetParameters(string json)
     {

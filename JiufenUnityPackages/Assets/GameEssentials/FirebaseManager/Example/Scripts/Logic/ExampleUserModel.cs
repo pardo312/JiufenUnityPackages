@@ -2,16 +2,16 @@ using Newtonsoft.Json;
 using UnityEngine;
 public class ExampleUserModel : MonoBehaviour
 {
-    private const string baseUrl = "{firebaseUrl}/Users";
+    private const string baseUrl = "https://test-firebasedll-default-rtdb.firebaseio.com/Users";
 
     public void GETUsers()
     {
-        FirebaseRequest.FirebaseListRequestPetiton<UserDto>(baseUrl, null, RequestUsersCallback, RequestType.GET);
+        FirebaseRequest.instance.FirebaseListRequestPetiton<UserDto>(baseUrl, null, RequestUsersCallback, RequestType.GET);
     }
 
     public void SENDNewUser()
     {
-        FirebaseRequest.FirebaseListRequestPetiton<UserDto>(baseUrl, new UserDto
+        FirebaseRequest.instance.FirebaseListRequestPetiton<UserDto>(baseUrl, new UserDto
         {
             nombreUsuario = "Test2",
             scoreMin = "1",
@@ -29,7 +29,7 @@ public class ExampleUserModel : MonoBehaviour
 
     public void DELETEUser()
     {
-        FirebaseRequest.FirebaseListRequestPetiton<UserDto>(baseUrl, 1, null, RequestType.DELETE);
+        FirebaseRequest.instance.FirebaseListRequestPetiton<UserDto>(baseUrl, 1, null, RequestType.DELETE);
     }
 
     public void RequestUsersCallback(bool success, FirebaseListDto<UserDto> data)

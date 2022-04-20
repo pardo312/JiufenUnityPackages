@@ -1,63 +1,92 @@
 using Newtonsoft.Json;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
 using System.Net.Http;
 using System.Reflection;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public static class FirebaseRequest
+public class FirebaseRequest : MonoBehaviour
 {
+    #region Instance
+    public static FirebaseRequest instance;
+
+    [RuntimeInitializeOnLoadMethod]
+    public static void Init()
+    {
+        GameObject go = new GameObject();
+        go.name = "FirebasRequestHandler";
+        FirebaseRequest fbRequest = (FirebaseRequest)go.AddComponent(typeof(FirebaseRequest));
+        instance = fbRequest;
+        DontDestroyOnLoad(fbRequest);
+    }
+    #endregion Instance
+
     #region  Methods
     #region SingleObject Request 
-    public static async void FirebaseObjectRequestPetiton<T>(string _url, object _payload = null, Action<bool, T> _callback = null, RequestType _type = RequestType.GET)
+    public void FirebaseObjectRequestPetiton<T>(string _url, object _payload = null, Action<bool, T> _callback = null, RequestType _type = RequestType.GET)
     {
-        StringContent data = null;
+        string data = null;
         if (_payload != null)
         {
-            string json = JsonConvert.SerializeObject(_payload);
-            data = new StringContent(json, Encoding.UTF8, "application/json");
-
+            data = JsonConvert.SerializeObject(_payload);
 
             if (_type == RequestType.PATCH)
             {
-                _url = _url.Remove(_url.LastIndexOf("/")+1, _url.Length - (_url.LastIndexOf("/")+1));
+                _url = _url.Remove(_url.LastIndexOf("/") + 1, _url.Length - (_url.LastIndexOf("/") + 1));
             }
 
             _url += ".json";
             if (_type == RequestType.GET)
-                _url += SetGetParameters(json);
+                _url += SetGetParameters(data);
         }
         else
         {
             _url += ".json";
         }
 
+        StartCoroutine(WebRequestObject(_url, _type, data, _callback));
+    }
 
-        using (var httpClient = new HttpClient())
+    IEnumerator WebRequestObject<T>(string _url, RequestType _type, string data, Action<bool, T> _callback)
+    {
+        UnityWebRequest request;
+        switch (_type)
         {
-            HttpResponseMessage response = new HttpResponseMessage();
-            switch (_type)
-            {
-                case RequestType.GET:
-                    response = await httpClient.GetAsync(_url);
-                    break;
-                case RequestType.POST:
-                    response = await httpClient.PostAsync(_url, data);
-                    break;
-                case RequestType.PUT:
-                    response = await httpClient.PutAsync(_url, data);
-                    break;
-                case RequestType.PATCH:
-                    var request = new HttpRequestMessage(new HttpMethod("PATCH"), _url);
-                    request.Content = data;
-                    response = await httpClient.SendAsync(request);
-                    break;
-                case RequestType.DELETE:
-                    response = await httpClient.DeleteAsync(_url);
-                    break;
-            }
-            string result = response.Content.ReadAsStringAsync().Result;
+            case RequestType.GET:
+                request = UnityWebRequest.Get(_url);
+                break;
+            case RequestType.POST:
+                request = UnityWebRequest.Post(_url, data);
+                break;
+            case RequestType.PUT:
+                request = UnityWebRequest.Put(_url, data);
+                break;
+            case RequestType.PATCH:
+                request = UnityWebRequest.Put(_url, data);
+                request.method = "PATCH";
+                break;
+            case RequestType.DELETE:
+                request = UnityWebRequest.Delete(_url);
+                break;
+            default:
+                request = UnityWebRequest.Get(_url);
+                break;
+        }
+
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.ConnectionError)
+        {
+            Debug.Log(request.error);
+        }
+        else
+        {
+            string result = request.downloadHandler.text;
             result = result.Replace("\\", string.Empty);
 
             T responseR = default(T);
@@ -76,12 +105,12 @@ public static class FirebaseRequest
     #endregion SingleObject Request 
 
     #region List Request Petiton
-    public static async void FirebaseListRequestPetiton<T>(string _url, object _payload = null, Action<bool, FirebaseListDto<T>> _callback = null, RequestType _type = RequestType.GET, bool patchWithFinalPayload = false)
+    public void FirebaseListRequestPetiton<T>(string _url, object _payload = null, Action<bool, FirebaseListDto<T>> _callback = null, RequestType _type = RequestType.GET, bool patchWithFinalPayload = false)
     {
-        StringContent data = null;
+        string json = null;
         if (_payload != null)
         {
-            string json = "";
+            json = "";
             if (_payload.GetType() == typeof(string))
                 json = (string)_payload;
             else
@@ -112,7 +141,6 @@ public static class FirebaseRequest
 
 
             _url += ".json";
-            data = new StringContent(json, Encoding.UTF8, "application/json");
             if (_type == RequestType.GET)
                 _url += SetGetParameters(json);
         }
@@ -120,32 +148,44 @@ public static class FirebaseRequest
         {
             _url += ".json";
         }
+        StartCoroutine(WebRequestObject(_url, _type, json, _callback));
+    }
 
-
-        using (var httpClient = new HttpClient())
+    IEnumerator WebRequestList<T>(string _url, RequestType _type, string data, Action<bool, FirebaseListDto<T>> _callback, Type _payloadType, bool patchWithFinalPayload)
+    {
+        UnityWebRequest request;
+        switch (_type)
         {
-            HttpResponseMessage response = new HttpResponseMessage();
-            switch (_type)
-            {
-                case RequestType.GET:
-                    response = await httpClient.GetAsync(_url);
-                    break;
-                case RequestType.POST:
-                    response = await httpClient.PostAsync(_url, data);
-                    break;
-                case RequestType.PUT:
-                    response = await httpClient.PutAsync(_url, data);
-                    break;
-                case RequestType.PATCH:
-                    var request = new HttpRequestMessage(new HttpMethod("PATCH"), _url);
-                    request.Content = data;
-                    response = await httpClient.SendAsync(request);
-                    break;
-                case RequestType.DELETE:
-                    response = await httpClient.DeleteAsync(_url);
-                    break;
-            }
-            string result = response.Content.ReadAsStringAsync().Result;
+            case RequestType.GET:
+                request = UnityWebRequest.Get(_url);
+                break;
+            case RequestType.POST:
+                request = UnityWebRequest.Post(_url, data);
+                break;
+            case RequestType.PUT:
+                request = UnityWebRequest.Put(_url, data);
+                break;
+            case RequestType.PATCH:
+                request = UnityWebRequest.Put(_url, data);
+                request.method = "PATCH";
+                break;
+            case RequestType.DELETE:
+                request = UnityWebRequest.Delete(_url);
+                break;
+            default:
+                request = UnityWebRequest.Get(_url);
+                break;
+        }
+
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.ConnectionError)
+        {
+            Debug.Log(request.error);
+        }
+        else
+        {
+            string result = request.downloadHandler.text;
             result = result.Replace("\\", string.Empty);
 
             FirebaseListDto<T> responseR = default(FirebaseListDto<T>);
@@ -156,15 +196,14 @@ public static class FirebaseRequest
                     responseR.List.RemoveAll(item => item == null);
             }
 
-
             if (_callback != null)
             {
-                if (_type == RequestType.PATCH && patchWithFinalPayload && _payload.GetType() != typeof(ChildCountPayload))
+                if (_type == RequestType.PATCH && patchWithFinalPayload && _payloadType != typeof(ChildCountPayload))
                 {
                     if (!String.IsNullOrEmpty(result) && result != "null")
                         _callback(true, null);
                     else
-                        _callback(false,null);
+                        _callback(false, null);
                 }
                 else
                 {
@@ -176,9 +215,8 @@ public static class FirebaseRequest
             }
         }
     }
-
     #region Patch Payload Set
-    private static void SetPayloadPatchRequest(string _url, string _originalJson, Action<string> _finalPayloadCallback)
+    private void SetPayloadPatchRequest(string _url, string _originalJson, Action<string> _finalPayloadCallback)
     {
         string dq = ('"' + "");
         GetNumberOfListChilds(_url, (number) =>
@@ -190,7 +228,7 @@ public static class FirebaseRequest
          });
     }
 
-    public static void GetNumberOfListChilds(string _url, Action<int> _response)
+    public void GetNumberOfListChilds(string _url, Action<int> _response)
     {
         FirebaseObjectRequestPetiton<int>(_url + "/ChildCount", null, (success, data) =>
           {
@@ -206,7 +244,7 @@ public static class FirebaseRequest
           }, RequestType.GET);
     }
 
-    private static void SetNumberOfListChilds(string _url, int _newChildCount)
+    private void SetNumberOfListChilds(string _url, int _newChildCount)
     {
         FirebaseListRequestPetiton<ChildCountPayload>(
             _url,
@@ -217,7 +255,7 @@ public static class FirebaseRequest
     #endregion Patch Payload Set
 
     #region Delete Set
-    public static void LowerChildCount(string _url)
+    public void LowerChildCount(string _url)
     {
         GetNumberOfListChilds(_url, (number) =>
          {
@@ -226,8 +264,9 @@ public static class FirebaseRequest
     }
     #endregion Delete Set
     #endregion List Request Petiton
+
     #region Helpers
-    private static string SetGetParameters(string json)
+    private string SetGetParameters(string json)
     {
         string paramsUrl = "";
         Dictionary<string, object> dictionary = JsonConvert.DeserializeObject<Dictionary<string, object>>(json);
@@ -240,8 +279,10 @@ public static class FirebaseRequest
         return $"?{paramsUrl}";
     }
 
-    private static bool IsAnyNotNullOrEmpty(object myObject)
+    private bool IsAnyNotNullOrEmpty(object myObject)
     {
+        if (myObject == null)
+            return true;
         bool anyParamNotNull = true;
         foreach (FieldInfo pi in myObject.GetType().GetRuntimeFields())
         {

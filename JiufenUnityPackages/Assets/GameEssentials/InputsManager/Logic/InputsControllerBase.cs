@@ -8,25 +8,6 @@ namespace JiufenGames.TetrisAlike.Logic
     public abstract class InputsControllerBase<T> : MonoBehaviour, IInputsController<T>
     {
 
-#if !NET_STANDARD_2_0
-        #region Singleton
-
-                private static IInputsController<T> m_instanceField;
-                public static IInputsController<T> m_instance => m_instaceField;
-                private protected virtual void Awake()
-                {
-                    //Change This
-                    if (m_instanceField == null)
-                    {
-                        m_instanceField = this;
-                    }
-                    else
-                    {
-                        DestroyImmediate(this.gameObject);
-                    }
-                }
-        #endregion Singleton
-#else
         #region Singleton
 
         public static IInputsController<T> m_instance;
@@ -43,7 +24,6 @@ namespace JiufenGames.TetrisAlike.Logic
             }
         }
         #endregion Singleton
-#endif
 
         #region Fields
         #region Backing Fields

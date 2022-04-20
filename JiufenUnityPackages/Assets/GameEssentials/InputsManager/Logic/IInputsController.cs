@@ -6,11 +6,6 @@ namespace JiufenGames.TetrisAlike.Logic
 {
     public interface IInputsController<T>
     {
-#if !NET_STANDARD_2_0
-        #region Singleton
-        static IInputsController<T> m_instance { get; };
-        #endregion Singleton
-#endif 
         #region Fields
         //Inputs Config
         List<InputsListener<T>> m_inputsListener { get; }

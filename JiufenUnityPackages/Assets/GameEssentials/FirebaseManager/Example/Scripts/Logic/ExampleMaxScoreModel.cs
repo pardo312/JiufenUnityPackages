@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ExampleMaxScoreModel : MonoBehaviour
 {
-    private const string baseUrl = "{firebaseURl}/MaxScore";
+    private const string baseUrl = "https://test-firebasedll-default-rtdb.firebaseio.com/MaxScore";
     public void GetMaxScore()
     {
-        FirebaseRequest.FirebaseObjectRequestPetiton<int>(baseUrl,
+        FirebaseRequest.instance.FirebaseObjectRequestPetiton<int>(baseUrl,
             null,
             (success, maxScore) =>
             {
@@ -18,7 +18,7 @@ public class ExampleMaxScoreModel : MonoBehaviour
 
     public void SetMaxScore()
     {
-        FirebaseRequest.FirebaseObjectRequestPetiton<MaxScorePayload>(baseUrl,
+        FirebaseRequest.instance.FirebaseObjectRequestPetiton<MaxScorePayload>(baseUrl,
             new MaxScorePayload(){MaxScore = 3 },
             (success, maxScore) =>
             {
@@ -29,7 +29,7 @@ public class ExampleMaxScoreModel : MonoBehaviour
 
     public void DeleteMaxScore()
     {
-        FirebaseRequest.FirebaseObjectRequestPetiton<int>(baseUrl,
+        FirebaseRequest.instance.FirebaseObjectRequestPetiton<int>(baseUrl,
             null,
             (success, maxScore) =>
             {

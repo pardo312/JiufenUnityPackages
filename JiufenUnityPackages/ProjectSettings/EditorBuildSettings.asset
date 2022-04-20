@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/GameEssentials/FirebaseManager/Example/FirebaseExample.unity
+    guid: 1d5e5e94302a8484fb306e689963dc1c
   m_configObjects: {}
